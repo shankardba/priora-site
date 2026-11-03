@@ -6,7 +6,7 @@
   "k510": 176529,
   "pma": 1483,
   "recalls": 59659,
-  "maude": 20319077,
+  "maude": 26554110,
   "gudid": 5238573,
   "cfr": 2553,
   "orgs": 39830
@@ -1074,20 +1074,55 @@
    [
     2024,
     "Death",
-    10
+    11
    ],
    [
     2024,
     "Injury",
-    10
+    11
    ],
    [
     2024,
     "Malfunction",
-    471
+    523
+   ],
+   [
+    2025,
+    "Death",
+    15
+   ],
+   [
+    2025,
+    "Injury",
+    11
+   ],
+   [
+    2025,
+    "Malfunction",
+    381
+   ],
+   [
+    2026,
+    "Death",
+    7
+   ],
+   [
+    2026,
+    "Injury",
+    20
+   ],
+   [
+    2026,
+    "Malfunction",
+    839
+   ],
+   [
+    2026,
+    "Other",
+    9
    ]
   ],
   "gudid_devices": 9948,
-  "maude_complete": false
+  "maude_complete": true
  }
 }
