@@ -387,3 +387,7 @@ table.methods .sens { font-family: var(--mono); font-size: 12.5px; white-space: 
 .arch[data-step="5"]:not(.hovering) .arch-svg .edge.s5[data-both] { marker-start: url(#ahOn); }
 .arch[data-step="5"]:not(.hovering) .arch-svg .edge.bus.s5 { marker-end: none; }
 .arch[data-step="5"]:not(.hovering) .arch-svg .node.s5 rect, .arch[data-step="5"]:not(.hovering) .arch-svg .node.s5 .disc { stroke: var(--amber); stroke-width: 2; }
+table.figures td:first-child { min-width: 0; color: var(--amber-ink); text-align: center; }
+table.figures td.num { white-space: nowrap; font-variant-numeric: tabular-nums; }
+table.figures q { font-style: italic; opacity: .8; }
+table.figures q::before, table.figures q::after { content: '"'; }

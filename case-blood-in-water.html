@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Detecting blood in water</title>
+<meta name="description" content="Priora case study: How to detect blood in water. Findings checked claim by claim against primary sources, with the FDA record, patent classes and literature.">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,700;1,8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body data-case="blood-in-water">
+
+<header class="mast">
+  <div class="wrap">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="index.html" aria-label="Priora home"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="13" fill="none" stroke="#9fb2cd" stroke-width="1.5"/><circle cx="16" cy="16" r="7.5" fill="none" stroke="#9fb2cd" stroke-width="1.2" opacity=".6"/><circle cx="16" cy="3" r="3" fill="#f2a93b"/><circle cx="16" cy="16" r="2" fill="#e5edf8"/></svg>
+        Priora
+      </a>
+      <div class="links">
+        <a href="index.html#how">How it works</a>
+        <a href="index.html#evidence">The evidence</a>
+        <a class="btn primary" href="index.html#cases">Case studies</a>
+      </div>
+    </nav>
+    <div class="rmast">
+      <p class="eyebrow" style="color:var(--amber)">Case study · detection methods</p>
+      <h1>Detecting blood in water</h1>
+      <div class="meta"><span>8 research questions</span><span>FDA product codes ODX, FKP, KDI, KHE, JIO and more</span><span>CPC G01N33/72</span></div>
+      <p>Blood in water matters in very different places: the dialysate of a haemodialysis machine, where a torn filter puts a patient&#x27;s blood into the waste stream; a crime scene that has been washed down; slaughterhouse effluent; a urine or stool sample. This case asks how blood is detected in each setting, how the methods compare, and what the public record shows about the devices that depend on them.</p>
+    </div>
+  </div>
+</header>
+
+<main class="wrap report">
+  <nav class="toc" aria-label="Case contents">
+    <b>Contents</b>
+    <a href="#findings">Key findings</a>
+    <a href="#methods">Methods compared</a>
+    <a href="#record">The FDA record</a>
+    <a href="#phrase">Blood-leak alarms in the field</a>
+    <a href="#patents">Patent classes</a>
+    <a href="#literature">Literature</a>
+    <a href="#review">Every claim checked</a>
+    <a href="#method">How this case was researched</a>
+  </nav>
+
+  <div>
+    <section class="finding" id="findings">
+      <p class="eyebrow">1 · Key findings</p>
+      <h2>What the research established</h2>
+      <p class="lead">Written by a local model from checked claims only. Each finding lists the claims it rests on and the sources that support them.</p>
+      <ol class="keyfind" id="findings-list"></ol>
+    </section>
+
+    <section class="finding" id="methods">
+      <p class="eyebrow">2 · Methods compared</p>
+      <h2>How each method works, and its limits</h2>
+      <p>Performance figures are given only where a source states them, in the source's own terms.</p>
+      <div id="methods-table"></div>
+      <h3 style="margin-top:28px">Figures from the sources</h3>
+      <p>Every figure below is copied word for word from a paper, regulator, patent or vendor document; the quote
+      is checked against the source text before it is kept. Figures used in the findings or the table are marked.</p>
+      <div id="figures-table"></div>
+    </section>
+
+    <section class="finding" id="record">
+      <p class="eyebrow">3 · The FDA record</p>
+      <h2>The devices that depend on these methods</h2>
+      <p>Clearances, approvals, recalls and adverse-event reports for each group of FDA product codes. Choose a group.</p>
+      <div id="fda-table"></div>
+      <div class="tabs" id="group-tabs" role="group" aria-label="Device group"></div>
+      <p id="g-summary" class="formnote"></p>
+      <div class="grid2">
+        <div><h3>Premarket decisions per year</h3><div class="chart" id="g-decisions"></div></div>
+        <div><h3>Adverse-event reports per year</h3><div class="chart" id="g-maude"></div></div>
+      </div>
+      <div class="grid2">
+        <div><h3>Most reported device problems</h3><div class="chart" id="g-problems"></div></div>
+        <div><h3>Recall root causes</h3><div class="chart" id="g-causes"></div></div>
+      </div>
+      <p id="g-days" class="formnote"></p>
+    </section>
+
+    <section class="finding" id="phrase">
+      <p class="eyebrow">4 · Blood-leak alarms in the field</p>
+      <h2><span id="text-total">…</span> reports mention it</h2>
+      <p>Adverse-event narratives for dialysis systems, searched for the phrase “blood leak”. Each bar counts reports filed that year whose narrative text mentions it.</p>
+      <div class="chart" id="text-chart"></div>
+    </section>
+    <section class="finding" id="patents">
+      <p class="eyebrow">5 · Patent classes</p>
+      <h2>Where the inventions are filed</h2>
+      <p>Cooperative Patent Classification groups that cover these methods, with the number of finer groups beneath each.</p>
+      <div class="cpc" id="cpc-list"></div>
+    </section>
+
+    <section class="finding" id="literature">
+      <p class="eyebrow">6 · Literature</p>
+      <h2>Papers per year in PubMed</h2>
+      <p>Title matches in the local copy of PubMed. Counts show where research attention went, not quality.</p>
+      <div class="chart" id="lit-chart"></div>
+      <div class="lit" id="lit-top"></div>
+    </section>
+
+    <section class="finding" id="review">
+      <p class="eyebrow">7 · Every claim checked</p>
+      <h2>What the AI draft got right, and what it got wrong</h2>
+      <p>The web-research drafts were split into single claims. Each claim was checked against the full text of the sources, with an exact quote. A claim whose numbers do not appear in the quoted source is marked as corrected, not supported. Wikipedia, topic digests and how-to sites are never used as evidence.</p>
+      <div class="vtally" id="review-tally"></div>
+      <div class="tabs" id="review-filter" role="group" aria-label="Show claims" style="margin-top:16px"></div>
+      <ol class="rlog" id="review-log"></ol>
+    </section>
+
+    <section class="finding" id="method">
+      <p class="eyebrow">8 · How this case was researched</p>
+      <h2>Open-source tools on one research server</h2>
+      <div class="rstats" id="r-stats"></div>
+      <p>Web research ran in Vane, a private search engine (Perplexica with SearXNG), with <span id="r-model">a local model</span>. Every cited page was then read in full (trafilatura, Docling). Daemon searched an offline Wikipedia and the Priora knowledge base, but only to follow their references to the papers they cite, which were read from a local copy of PubMed. Claims were checked with a local model and nomic-embed-text embeddings. FDA, MAUDE, 21 CFR and CPC data come from the Priora database. No step used a cloud AI service.</p>
+      <p class="formnote" id="r-tiers"></p>
+      <h3>The research questions</h3>
+      <ol class="qlist" id="r-questions"></ol>
+      <p class="cite">Most-used websites: <span id="r-domains"></span></p>
+      <p>Priora shows what the sources say and how well each claim holds up. It is not medical, legal or regulatory advice.</p>
+      <p><a class="btn primary" href="index.html#cases">More case studies</a></p>
+    </section>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>Priora · a research engine for medical technology</span>
+    <span>FDA data from openFDA, AccessGUDID and eCFR. Patent classification from the CPC scheme. Literature from PubMed. Figures as of <span data-c="generated_at">…</span>.</span>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+<script src="assets/case.js"></script>
+</body>
+</html>

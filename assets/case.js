@@ -90,7 +90,7 @@ function research(D) {
   $('r-model').textContent = R.model;
 }
 
-const TIER = { primary: 'Paper', regulatory: 'Regulator or standard', industry: 'Manufacturer', other: 'Other' };
+const TIER = { primary: 'Paper', academic: 'Thesis or report', patent: 'Patent', regulatory: 'Regulator or standard', industry: 'Vendor document', web: 'Website', other: 'Website' };
 const VERDICT = { supported: 'Supported', partly: 'Corrected', not_found: 'Not found in sources', contradicted: 'Contradicted' };
 const host = u => { try { return new URL(u).hostname.replace(/^www\./, ''); } catch { return u; } };
 const refLink = r => `<a href="${esc(r.url)}" target="_blank" rel="noopener" title="${esc(r.title || r.url)}">${esc(r.url.includes('pubmed.ncbi') ? 'PMID ' + r.url.match(/\d+/)[0] : host(r.url))}</a> <span class="tier">${TIER[r.tier] || r.tier}</span>`;
@@ -104,6 +104,15 @@ function report(D) {
       <tr><th>Method</th><th>Principle</th><th>Measures</th><th>Stated performance</th><th>Used in</th><th>Limitations</th><th>Evidence</th></tr>
       ${R.methods.map(m => `<tr><td><b>${esc(m.method)}</b></td><td>${esc(m.principle)}</td><td>${esc(m.measures)}</td><td>${esc(m.performance) || '—'}</td>
         <td>${esc(m.setting)}</td><td>${esc(m.limitations)}</td><td class="cite">${m.refs.map(refLink).join('<br>')}</td></tr>`).join('')}</table></div>`;
+  if ($('figures-table')) {
+    const F = (R && R.figures) || [];
+    const fig = f => `<tr${f.used ? ' class="used"' : ''}><td>${f.used ? '●' : ''}</td><td>${esc(f.method)}</td><td>${esc(f.quantity)}</td>
+        <td class="num"><b>${esc(f.value)}</b> ${esc(f.unit)}</td><td>${esc(f.conditions) || '—'}</td>
+        <td class="cite"><q>${esc(f.quote)}</q><br>${refLink(f)}</td></tr>`;
+    $('figures-table').innerHTML = !F.length ? '<p class="formnote">No figures extracted yet.</p>' :
+      `<div class="tablewrap"><table class="methods figures"><tr><th title="used in findings or table">Used</th><th>Method</th><th>Quantity</th><th>Value</th><th>Conditions</th><th>Source and quote</th></tr>
+      ${[...F].sort((a, b) => (b.used - a.used) || a.method.localeCompare(b.method)).map(fig).join('')}</table></div>`;
+  }
   if (!R || !$('review-log')) return;
   const t = R.tally, n = t.supported + t.partly + t.not_found + t.contradicted;
   $('review-tally').innerHTML = Object.entries(VERDICT).map(([k, v]) => `<div class="v-${k}"><b>${t[k]}</b><span>${v}</span></div>`).join('') +
@@ -126,7 +135,7 @@ function report(D) {
 function tiers(D) {
   const F = D.research?.fetched; if (!F || !$('r-tiers')) return;
   $('r-tiers').textContent = `${fmt(F.with_text)} of ${fmt(F.total)} sources read in full · ` +
-    Object.entries(F.tiers).map(([k, v]) => `${k === 'secondary' ? 'secondary (never cited)' : (TIER[k] || k).toLowerCase()} ${v}`).join(' · ') +
+    Object.entries(F.tiers).map(([k, v]) => `${k === 'secondary' ? 'reference works (never cited)' : k === 'web' ? 'unvetted websites (not cited)' : (TIER[k] || k).toLowerCase()} ${v}`).join(' · ') +
     (F.papers_via_daemon ? ` · ${F.papers_via_daemon} papers found through Daemon's reference trail` : '');
 }
 
