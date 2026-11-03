@@ -214,3 +214,6 @@ blockquote.cfr cite { display: block; margin-top: 8px; font: 500 12px var(--mono
 .road span { color: var(--ink-2); font-size: 15px; }
 .road .mono { color: var(--amber-ink); }
 .tablewrap { overflow-x: auto; }
+.matrix.plan { min-width: 680px; font-size: 12.5px; }
+.matrix.plan td { vertical-align: top; }
+.finding > h3 { font: 600 12px/1 var(--ui); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); }
