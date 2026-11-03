@@ -50,25 +50,24 @@
     <section class="finding" id="findings">
       <p class="eyebrow">1 · Key findings</p>
       <h2>What the research established</h2>
-      <p class="lead">Written by a local model from checked claims only. Each finding lists the claims it rests on and the sources that support them.</p>
+      <p class="lead">Drafted by a local AI model from checked claims only, then each finding was reread against its own sources. Every source under a finding opens the paper or document it came from.</p>
       <ol class="keyfind" id="findings-list"></ol>
     </section>
 
     <section class="finding" id="methods">
       <p class="eyebrow">2 · Methods compared</p>
       <h2>How each method works, and its limits</h2>
-      <p>Performance figures are given only where a source states them, in the source's own terms.</p>
+      <p>What each method relies on, what it measures, where it is used and where it falls short. Performance is shown only where a source states it, in the source's own terms.</p>
       <div id="methods-table"></div>
-      <h3 style="margin-top:28px">Figures from the sources</h3>
-      <p>Every figure below is copied word for word from a paper, regulator, patent or vendor document; the quote
-      is checked against the source text before it is kept. Figures used in the findings or the table are marked.</p>
+      <h3 class="subh">Figures from the sources</h3>
+      <p>Each figure is copied word for word from a paper, regulator, patent or vendor document, and its quote is checked against the source text. The figures used above come first, marked in amber.</p>
       <div id="figures-table"></div>
     </section>
 
     <section class="finding" id="record">
       <p class="eyebrow">3 · The FDA record</p>
       <h2>The devices that depend on these methods</h2>
-      <p>Clearances, approvals, recalls and adverse-event reports for each group of FDA product codes. Choose a group.</p>
+      <p>Clearances, approvals, recalls and adverse-event reports for each group of FDA product codes. Choose a group to see its trends.</p>
       <div id="fda-table"></div>
       <div class="tabs" id="group-tabs" role="group" aria-label="Device group"></div>
       <p id="g-summary" class="formnote"></p>
@@ -101,7 +100,7 @@
     <section class="finding" id="review">
       <p class="eyebrow">6 · Every claim checked</p>
       <h2>What the AI draft got right, and what it got wrong</h2>
-      <p>The web-research drafts were split into single claims. Each claim was checked against the full text of the sources, with an exact quote. A claim whose numbers do not appear in the quoted source is marked as corrected, not supported. Wikipedia, topic digests and how-to sites are never used as evidence.</p>
+      <p>The AI's first drafts were split into single claims, and each claim was checked against the full text of its sources. Where a source says something different, its wording is shown with the exact quote. Wikipedia, topic digests and how-to sites are never used as evidence.</p>
       <div class="vtally" id="review-tally"></div>
       <div class="tabs" id="review-filter" role="group" aria-label="Show claims" style="margin-top:16px"></div>
       <ol class="rlog" id="review-log"></ol>
@@ -111,7 +110,13 @@
       <p class="eyebrow">7 · How this case was researched</p>
       <h2>Open-source tools on one research server</h2>
       <div class="rstats" id="r-stats"></div>
-      <p>Web research ran in Vane, a private search engine (Perplexica with SearXNG), with <span id="r-model">a local model</span>. Every cited page was then read in full (trafilatura, Docling). Daemon searched an offline Wikipedia and the Priora knowledge base, but only to follow their references to the papers they cite, which were read from a local copy of PubMed. Claims were checked with a local model and nomic-embed-text embeddings. FDA, MAUDE, 21 CFR and CPC data come from the Priora database. No step used a cloud AI service.</p>
+      <ol class="howlist">
+        <li><b>Search.</b> Each question was researched on the open web through Vane, a private search engine (Perplexica with SearXNG), with <span id="r-model">a local model</span>.</li>
+        <li><b>Read.</b> Every cited page was read in full (trafilatura, Docling). References in an offline encyclopedia and the Priora knowledge base were followed to the papers they cite, read from a local copy of PubMed; the encyclopedia itself is never cited.</li>
+        <li><b>Check.</b> The drafts were split into single claims, and each claim was checked against the source text with a local model and nomic-embed-text embeddings.</li>
+        <li><b>Write.</b> Findings were written from checked claims and figures only, and each was reread against its own sources before publication.</li>
+      </ol>
+      <p>FDA, adverse-event (MAUDE), 21 CFR and patent-class data come from the Priora database. No step used a cloud AI service.</p>
       <p class="formnote" id="r-tiers"></p>
       <h3>The research questions</h3>
       <ol class="qlist" id="r-questions"></ol>

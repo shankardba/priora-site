@@ -10,7 +10,7 @@ const sum = (a, k) => a.reduce((t, x) => t + (k ? x[k] : x), 0);
 function lines(host, series, { every } = {}) {         // series: [{name, color, points: [[x, y]]}]
   const xs = [...new Set(series.flatMap(s => s.points.map(p => p[0])))].sort((a, b) => a - b);
   const max = C.niceMax(Math.max(1, ...series.flatMap(s => s.points.map(p => p[1]))));
-  const f = C.frame(host), band = C.axes(f, xs, max, { every: every || Math.ceil(xs.length / 9), yfmt: short });
+  const f = C.frame(host), band = C.axes(f, xs, max, { every: every || C.stepFor(f, xs), yfmt: short });
   for (const s of series) {
     const m = new Map(s.points);
     const pts = xs.map((x, i) => [f.l + band * (i + .5), f.t + f.ih - f.ih * (m.get(x) || 0) / max]);
@@ -30,8 +30,9 @@ function fdaTable(D) {
     <tr><th>Device group and FDA product codes</th><th>21 CFR</th><th>Class</th><th class="num">510(k)s</th><th class="num">PMAs</th><th class="num">Recalls</th><th class="num">Adverse-event reports</th></tr>${rows}</table></div>`;
 }
 
+let shown = 0;
 function groupView(D, i) {
-  const g = D.groups[i];
+  const g = D.groups[i]; shown = i;
   document.querySelectorAll('#group-tabs button').forEach((b, k) => b.setAttribute('aria-pressed', String(k === i)));
   const dec = g.decisions_by_year;
   if (dec.length) C.bars($('g-decisions'), dec.map(r => r[0]), dec.map(r => r[1]), { label: 'decisions' }); else $('g-decisions').innerHTML = '<p class="formnote">No premarket decisions on record.</p>';
@@ -93,38 +94,64 @@ function research(D) {
 const TIER = { primary: 'Paper', academic: 'Thesis or report', patent: 'Patent', regulatory: 'Regulator or standard', industry: 'Vendor document', web: 'Website', other: 'Website' };
 const VERDICT = { supported: 'Supported', partly: 'Corrected', not_found: 'Not found in sources', contradicted: 'Contradicted' };
 const host = u => { try { return new URL(u).hostname.replace(/^www\./, ''); } catch { return u; } };
-const refLink = r => `<a href="${esc(r.url)}" target="_blank" rel="noopener" title="${esc(r.title || r.url)}">${esc(r.url.includes('pubmed.ncbi') ? 'PMID ' + r.url.match(/\d+/)[0] : host(r.url))}</a> <span class="tier">${TIER[r.tier] || r.tier}</span>`;
+// a source chip: a short title (or PMID / PMC id), then the kind of source; the full title is the tooltip
+const shortTitle = t => { t = String(t || '').replace(/\s+/g, ' ').replace(/^\s*\[?PDF\]?\s+/i, ''); if (/confidential|proprietary|untitled/i.test(t)) return ''; t = t.replace(/\s*[|–-]\s*(PMC|PubMed|NCBI|ScienceDirect).*$/i, '').trim(); return t.length > 52 ? t.slice(0, 50).replace(/\s+\S*$/, '') + '…' : t; };
+const srcName = r => { const u = r.url || '', pm = u.match(/pubmed\.ncbi\.nlm\.nih\.gov\/(\d+)/), pmc = u.match(/(PMC\d+)/i);
+  return shortTitle(r.title) || (pm ? 'PMID ' + pm[1] : pmc ? pmc[1].toUpperCase() : host(u)); };
+const refLink = r => `<a class="src" href="${esc(r.url)}" target="_blank" rel="noopener" title="${esc((shortTitle(r.title) ? r.title + ' · ' : '') + host(r.url))}">${esc(srcName(r))} <span class="tier">${TIER[r.tier] || r.tier}</span></a>`;
+const plural = (n, w) => `${n} ${w}${n === 1 ? '' : 's'}`;
+
+// a list that shows its first `first` rows, with a button for the rest
+function more(host, rows, first, label, after = host) {
+  if (after.nextElementSibling?.classList.contains('more')) after.nextElementSibling.remove();
+  host.innerHTML = rows.slice(0, first).join('');
+  if (rows.length <= first) return;
+  const b = document.createElement('button');
+  b.type = 'button'; b.className = 'more'; b.textContent = label(rows.length);
+  b.addEventListener('click', () => { host.innerHTML = rows.join(''); b.remove(); });
+  after.after(b);
+}
 
 function report(D) {
   const R = D.research?.report;
   const none = '<p class="formnote">The checked findings appear here once the case has been through verification.</p>';
   if ($('findings-list')) $('findings-list').innerHTML = !R ? none : R.findings.map((f, i) => `<li><span>${String(i + 1).padStart(2, '0')}</span><div>
-      <b>${esc(f.headline)}</b><p>${esc(f.detail)}</p><p class="cite">${f.refs.map(refLink).join(' · ')} · claims ${f.claims.join(', ')}</p></div></li>`).join('');
-  if ($('methods-table')) $('methods-table').innerHTML = !R ? none : `<div class="tablewrap"><table class="methods">
-      <tr><th>Method</th><th>Principle</th><th>Measures</th><th>Stated performance</th><th>Used in</th><th>Limitations</th><th>Evidence</th></tr>
-      ${R.methods.map(m => `<tr><td><b>${esc(m.method)}</b></td><td>${esc(m.principle)}</td><td>${esc(m.measures)}</td><td>${esc(m.performance) || '—'}</td>
-        <td>${esc(m.setting)}</td><td>${esc(m.limitations)}</td><td class="cite">${m.refs.map(refLink).join('<br>')}</td></tr>`).join('')}</table></div>`;
-  if ($('figures-table')) {
-    const F = (R && R.figures) || [];
-    const fig = f => `<tr${f.used ? ' class="used"' : ''}><td>${f.used ? '●' : ''}</td><td>${esc(f.method)}</td><td>${esc(f.quantity)}</td>
-        <td class="num"><b>${esc(f.value)}</b> ${esc(f.unit)}</td><td>${esc(f.conditions) || '—'}</td>
-        <td class="cite"><q>${esc(f.quote)}</q><br>${refLink(f)}</td></tr>`;
-    $('figures-table').innerHTML = !F.length ? '<p class="formnote">No figures extracted yet.</p>' :
-      `<div class="tablewrap"><table class="methods figures"><tr><th title="used in findings or table">Used</th><th>Method</th><th>Quantity</th><th>Value</th><th>Conditions</th><th>Source and quote</th></tr>
-      ${[...F].sort((a, b) => (b.used - a.used) || a.method.localeCompare(b.method)).map(fig).join('')}</table></div>`;
+      <b>${esc(f.headline)}</b><p>${esc(f.detail)}</p>
+      <div class="srcs">${f.refs.map(refLink).join('')}<span class="basis">from ${plural(f.claims.length, 'checked claim')}${f.figures?.length ? ' and ' + plural(f.figures.length, 'figure') : ''}</span></div></div></li>`).join('');
+
+  if ($('methods-table')) {
+    const row = (k, v) => v ? `<dt>${k}</dt><dd>${esc(v)}</dd>` : '';
+    $('methods-table').innerHTML = !R ? none : `<div class="mcards">${R.methods.map(m => `<article class="mcard">
+      <header><h4>${esc(m.method)}</h4>${m.performance ? `<span class="perf">${esc(m.performance)}</span>` : ''}</header>
+      <dl>${row('Principle', m.principle)}${row('Measures', m.measures)}${row('Used in', m.setting)}${row('Limitations', m.limitations)}
+        <dt>Sources</dt><dd class="srcs">${m.refs.map(refLink).join('')}</dd></dl></article>`).join('')}</div>`;
   }
+
+  if ($('figures-table')) {
+    const F = [...((R && R.figures) || [])].sort((a, b) => (b.used - a.used) || a.method.localeCompare(b.method));
+    const fig = f => `<li${f.used ? ' class="used"' : ''}><div class="val"><b>${esc(f.value)}</b> ${f.unit && !f.value.toLowerCase().includes(f.unit.toLowerCase()) ? esc(f.unit) : ''}</div><div>
+        <p class="what"><b>${esc(f.method)}</b> · ${esc(f.quantity)}</p>${f.conditions ? `<p class="cond">${esc(f.conditions)}</p>` : ''}
+        <q>${esc(f.quote)}</q><div class="srcs">${refLink(f)}</div></div></li>`;
+    if (!F.length) $('figures-table').innerHTML = '<p class="formnote">No figures extracted yet.</p>';
+    else {
+      $('figures-table').innerHTML = '<ol class="figlist"></ol>';
+      const used = F.filter(f => f.used).length;
+      more($('figures-table').firstElementChild, F.map(fig), Math.max(used, 8), n => `Show all ${n} figures`);
+    }
+  }
+
   if (!R || !$('review-log')) return;
   const t = R.tally, n = t.supported + t.partly + t.not_found + t.contradicted;
   $('review-tally').innerHTML = Object.entries(VERDICT).map(([k, v]) => `<div class="v-${k}"><b>${t[k]}</b><span>${v}</span></div>`).join('') +
     `<div><b>${Math.round(100 * t.supported / Math.max(1, n))}%</b><span>of ${n} draft claims held up as written</span></div>`;
   const show = k => {
     document.querySelectorAll('#review-filter button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.k === k)));
-    const rows = R.claims.filter(c => k === 'all' || c.verdict === k);
-    $('review-log').innerHTML = rows.map(c => `<li class="v-${c.verdict}"><span class="badge">${VERDICT[c.verdict]}</span><div>
+    const rows = R.claims.filter(c => k === 'all' || c.verdict === k).map(c => `<li class="v-${c.verdict}"><span class="badge">${VERDICT[c.verdict]}</span><div>
       <p class="claim">${esc(c.claim)}</p>
-      ${c.correction && c.verdict !== 'supported' ? `<p class="fix"><b>Source says:</b> ${esc(c.correction)}</p>` : ''}
+      ${c.correction && c.verdict !== 'supported' ? `<p class="fix"><b>The source says:</b> ${esc(c.correction)}</p>` : ''}
       ${c.quote ? `<blockquote>${esc(c.quote)}</blockquote>` : ''}
-      <p class="cite">Q${c.question}${c.evidence ? ' · ' + refLink(c.evidence) : ''}${c.flags?.length ? ' · check: ' + esc(c.flags.join('; ')) : ''}</p></div></li>`).join('');
+      ${c.evidence ? `<div class="srcs">${refLink(c.evidence)}</div>` : ''}</div></li>`);
+    more($('review-log'), rows, 8, n => `Show all ${n} claims`);
   };
   $('review-filter').innerHTML = [['partly', 'Corrected'], ['contradicted', 'Contradicted'], ['not_found', 'Not found'], ['supported', 'Supported'], ['all', 'All']]
     .map(([k, v]) => `<button type="button" class="tab" data-k="${k}" aria-pressed="false">${v} (${k === 'all' ? R.claims.length : t[k]})</button>`).join('');
@@ -141,6 +168,7 @@ function tiers(D) {
 
 fetch(`data/case-${id}.json`).then(r => r.json()).then(D => {
   fdaTable(D); groups(D); textPhrase(D); cpc(D); pubmed(D); research(D); report(D); tiers(D);
+  C.onResize(() => { groupView(D, shown); textPhrase(D); pubmed(D); });
   document.querySelectorAll('[data-c]').forEach(n => { const v = n.dataset.c.split('.').reduce((o, k) => o?.[k], D); if (v != null) n.textContent = typeof v === 'number' ? fmt(v) : v; });
 }).catch(e => console.error(e));
 })();

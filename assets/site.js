@@ -11,11 +11,14 @@ const txt = (parent, x, y, s, attrs = {}) => { const t = el('text', { x, y, ...a
 const niceMax = v => { const p = Math.pow(10, Math.floor(Math.log10(v || 1))); for (const m of [1, 2, 2.5, 5, 10]) if (m * p >= v) return m * p; return 10 * p; };
 
 /* ---- charts: one frame, bars / line / stacked bars / horizontal bars ---- */
-function frame(host, { w = 560, h = 220, l = 40, r = 12, t = 12, b = 26 } = {}) {
+// Charts are drawn at the width they are shown at, so their labels stay at the page's text size.
+function frame(host, { w, h = 230, l = 52, r = 14, t = 14, b = 28 } = {}) {
   host.textContent = '';
+  w = w || Math.max(300, Math.round(host.clientWidth || 560));
   const svg = el('svg', { viewBox: `0 0 ${w} ${h}`, role: 'img' }, host);
   return { svg, w, h, l, r, t, b, iw: w - l - r, ih: h - t - b };
 }
+const stepFor = (f, xs) => Math.ceil(xs.length / Math.max(3, Math.floor(f.iw / 46)));   // year labels that fit
 function axes(f, xs, ymax, { every = 1, yfmt = fmt, ticks = 4 } = {}) {
   const band = f.iw / xs.length;
   for (let i = 0; i <= ticks; i++) {
@@ -23,18 +26,19 @@ function axes(f, xs, ymax, { every = 1, yfmt = fmt, ticks = 4 } = {}) {
     el('line', { x1: f.l, x2: f.w - f.r, y1: y, y2: y, class: i ? 'gl' : 'ax' }, f.svg);
     txt(f.svg, f.l - 6, y + 4, yfmt(v), { 'text-anchor': 'end' });
   }
-  xs.forEach((x, i) => { if (i % every === 0 || i === xs.length - 1) txt(f.svg, f.l + band * (i + .5), f.h - 8, x, { 'text-anchor': 'middle' }); });
+  const last = xs.length - 1;
+  xs.forEach((x, i) => { if ((i % every === 0 && last - i >= every * .7) || i === last) txt(f.svg, f.l + band * (i + .5), f.h - 8, x, { 'text-anchor': 'middle' }); });
   return band;
 }
 function bars(host, xs, ys, { color = css('--chart-1'), every, label } = {}) {
-  const f = frame(host), ymax = niceMax(Math.max(...ys)), band = axes(f, xs, ymax, { every: every || Math.ceil(xs.length / 9) });
+  const f = frame(host), ymax = niceMax(Math.max(...ys)), band = axes(f, xs, ymax, { every: every || stepFor(f, xs) });
   ys.forEach((v, i) => {
     const hgt = f.ih * v / ymax, r = el('rect', { x: f.l + band * i + band * .15, y: f.t + f.ih - hgt, width: band * .7, height: Math.max(0, hgt), fill: color, rx: 1.5 }, f.svg);
     el('title', {}, r).textContent = `${xs[i]}: ${fmt(v)}${label ? ' ' + label : ''}`;
   });
 }
 function line(host, xs, ys, { color = css('--chart-2'), every, unit = '' } = {}) {
-  const f = frame(host), ymax = niceMax(Math.max(...ys)), band = axes(f, xs, ymax, { every: every || Math.ceil(xs.length / 9) });
+  const f = frame(host), ymax = niceMax(Math.max(...ys)), band = axes(f, xs, ymax, { every: every || stepFor(f, xs) });
   const pts = ys.map((v, i) => [f.l + band * (i + .5), f.t + f.ih - f.ih * v / ymax]);
   el('path', { d: `M${pts.map(p => p.join(',')).join('L')}L${pts.at(-1)[0]},${f.t + f.ih}L${pts[0][0]},${f.t + f.ih}Z`, fill: color, opacity: .12 }, f.svg);
   el('path', { d: 'M' + pts.map(p => p.join(',')).join('L'), fill: 'none', stroke: color, 'stroke-width': 2.2, 'stroke-linejoin': 'round' }, f.svg);
@@ -46,7 +50,7 @@ function line(host, xs, ys, { color = css('--chart-2'), every, unit = '' } = {})
 }
 function stack(host, xs, series, { every } = {}) {         // series: [{name, color, values}]
   const tot = xs.map((_, i) => series.reduce((t, s) => t + s.values[i], 0));
-  const f = frame(host), ymax = niceMax(Math.max(...tot)), band = axes(f, xs, ymax, { every: every || Math.ceil(xs.length / 9), yfmt: short });
+  const f = frame(host), ymax = niceMax(Math.max(...tot)), band = axes(f, xs, ymax, { every: every || stepFor(f, xs), yfmt: short });
   xs.forEach((x, i) => {
     let base = 0;
     for (const s of series) {
@@ -57,16 +61,17 @@ function stack(host, xs, series, { every } = {}) {         // series: [{name, co
   });
 }
 function hbars(host, rows, { color = css('--chart-1') } = {}) {
-  const w = 560, rowH = 26, l = 230, f = frame(host, { w, h: rows.length * rowH + 8, l, r: 46, t: 4, b: 4 });
+  const w = Math.max(300, Math.round(host.clientWidth || 560)), rowH = 30, l = Math.min(250, Math.round(w * .46));
+  const f = frame(host, { w, h: rows.length * rowH + 8, l, r: 56, t: 4, b: 4 }), fit = Math.floor(l / 7.4);
   const max = Math.max(...rows.map(r => r[1]));
   rows.forEach(([name, v], i) => {
     const y = f.t + i * rowH;
-    txt(f.svg, l - 8, y + 17, name.length > 36 ? name.slice(0, 35) + '…' : name, { 'text-anchor': 'end', style: `fill:${css('--ink-2')};font-size:12px` });
-    el('rect', { x: l, y: y + 5, width: Math.max(2, f.iw * v / max), height: rowH - 10, fill: color, rx: 1.5 }, f.svg);
-    txt(f.svg, l + f.iw * v / max + 6, y + 17, fmt(v), { style: `fill:${css('--ink-2')};font-size:12px` });
+    txt(f.svg, l - 8, y + 19, name.length > fit ? name.slice(0, fit - 1) + '…' : name, { 'text-anchor': 'end', style: `fill:${css('--ink-2')}` });
+    el('rect', { x: l, y: y + 7, width: Math.max(2, f.iw * v / max), height: rowH - 13, fill: color, rx: 1.5 }, f.svg);
+    txt(f.svg, l + f.iw * v / max + 6, y + 19, fmt(v), { style: `fill:${css('--ink-2')}` });
   });
 }
-const legend = (host, items) => { const d = document.createElement('div'); d.className = 'legend'; d.innerHTML = items.map(([n, c]) => `<span><i style="background:${c}"></i>${n}</span>`).join(''); host.after(d); };
+const legend = (host, items) => { if (host.nextElementSibling?.classList.contains('legend')) host.nextElementSibling.remove(); const d = document.createElement('div'); d.className = 'legend'; d.innerHTML = items.map(([n, c]) => `<span><i style="background:${c}"></i>${n}</span>`).join(''); host.after(d); };
 
 /* ---- data ---- */
 function fill(D) {
@@ -103,8 +108,10 @@ function fill(D) {
   }
   if (h('ct-list')) h('ct-list').textContent = ex.clearance_types.map(([t, n]) => `${t} ${fmt(n)}`).join(' · ');
 }
-window.PrioraCharts = { el, txt, frame, axes, bars, line, stack, hbars, legend, fmt, short, niceMax, css };
-if (document.querySelector('[data-k]')) fetch('data/pitch.json').then(r => r.json()).then(fill).catch(() => {});
+window.PrioraCharts = { onResize: (...a) => onResize(...a), el, txt, frame, axes, stepFor, bars, line, stack, hbars, legend, fmt, short, niceMax, css };
+// redraw charts at their new width when the window is resized
+const onResize = fn => { let w = innerWidth, t; addEventListener('resize', () => { clearTimeout(t); t = setTimeout(() => { if (innerWidth !== w) { w = innerWidth; fn(); } }, 200); }); };
+if (document.querySelector('[data-k]')) fetch('data/pitch.json').then(r => r.json()).then(D => { fill(D); onResize(() => fill(D)); }).catch(() => {});
 
 /* ---- contact form: not connected yet, says so ---- */
 const form = $('#ask');
