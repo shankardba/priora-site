@@ -116,35 +116,90 @@ if (form) form.addEventListener('submit', ev => {
   note.textContent = 'Thank you. This preview site is not connected yet, so nothing was sent.';
 });
 
-/* ---- architecture diagram: step through, autoplay while in view (not with reduced motion) ---- */
+/* ---- architecture diagram: hover shows connections, click explains, steps filter (no motion) ---- */
 const arch = document.getElementById('arch');
 if (arch) {
+  const X = {
+    q: ['Research question', 'A plain question from the client, which the analyst turns into eight specific research questions.', 'The quality of the answer starts with the quality of the question.', 'Written by the analyst'],
+    web: ['Open web', 'Public pages: manufacturer documents, journal articles, regulator notices and standards summaries.', 'Where new and specialised information appears first.', 'Searched privately through SearXNG, an open-source metasearch engine'],
+    lit: ['Scientific literature', '38 million citations and abstracts from PubMed, the US National Library of Medicine index, held on the server.', 'Primary evidence: a finding can cite the paper behind it by its PubMed ID.', 'NLM PubMed baseline, loaded into PostgreSQL'],
+    fda: ['FDA device records', 'FDA 510(k) clearances, PMA approvals and recalls, and 5.2 million device identifiers.', 'Shows what is already on the market, who makes it, how long FDA review took and what was recalled.', 'openFDA and AccessGUDID downloads'],
+    mdr: ['Adverse-event reports', '26.6 million reports of device malfunctions, injuries and deaths filed with FDA, with their narratives.', 'The field record of how devices fail in real use.', 'FDA MAUDE files'],
+    cfr: ['Regulations', 'Title 21 of the Code of Federal Regulations, Parts 800 to 898: the classification and controls for every device type.', 'Ties each device type to its rule, its class and its route to market.', 'eCFR'],
+    cpc: ['Patent classification', 'The Cooperative Patent Classification: 254,314 codes used by the US and European patent offices.', 'Locates the inventions in a field and connects them to device types.', 'CPC scheme, 2026.08 release'],
+    search: ['Private web search', 'Turns each research question into web searches, ranks the results and drafts an answer with numbered sources.', 'A fast first pass over the open web, without any cloud AI service seeing the question.', 'Vane (Perplexica) with SearXNG'],
+    reader: ['Document reader', 'Downloads every source the search cited and keeps its full text, including PDFs and tables.', 'Search snippets are too short to check a claim against. The full text is not.', 'trafilatura and Docling'],
+    libr: ['Research librarian', 'Looks the question up in an offline encyclopedia and the expert knowledge base, then follows their reference lists to the original papers.', 'Encyclopedias are never cited. The papers behind them are.', 'Daemon, with an offline copy of Wikipedia (Kiwix)'],
+    expert: ['Expert knowledge', 'Curated, sourced notes on regulation, standards, patent law and device types, reviewed before they are added.', 'Gives the system an expert’s map: which rule applies, which standard, which product code.', 'Priora knowledge base, synced into the graph'],
+    graph: ['Connected knowledge graph', 'One database that links device types, regulations, makers, recalls, field reports, patent classes, papers and expert notes.', 'Questions that cross sources (who makes this device type, what was recalled, which patents cover it) become a single query.', 'PostgreSQL with Apache AGE and pgvector'],
+    meaning: ['Meaning search', 'Finds the passages that say the same thing as a claim, even when the wording differs.', 'Brings the right evidence to the fact checker out of thousands of pages.', 'Open-source text embeddings, computed on the server'],
+    lm: ['Language model', 'An open-weight AI model that runs on the server’s own processor and does the reading and writing for every AI step.', 'No data goes to an outside AI provider, and there are no per-use fees.', 'Ollama serving open-weight models'],
+    check: ['Fact checker', 'Splits each draft into single claims and tests every one against the source passages. A claim stands only if its exact quote is in the source and every number matches.', 'Catches the errors AI drafts make: wrong units, misattributed figures, invented limits.', 'Priora verifier, on the language model'],
+    writer: ['Report writer', 'Writes the findings and the methods table from checked claims only, each tied to its sources.', 'Nothing reaches the report that has not passed the check.', 'Priora report step, on the language model'],
+    o1: ['Checked findings', 'The main conclusions, each listing the claims and the sources behind it.', 'Every statement can be traced to its evidence.', ''],
+    o2: ['Methods compared', 'How each method works, its stated performance, where it is used and its limits.', 'A side-by-side view for technical decisions.', ''],
+    o3: ['Device and patent landscape', 'Clearances, makers, recalls, field reports and patent classes for the device types involved.', 'Shows the competition and the known failure modes before design starts.', ''],
+    o4: ['Regulatory roadmap', 'The rule that applies, the route to market and the evidence plan.', 'Turns the research into the next regulatory steps.', ''],
+    review: ['Expert review', 'A subject expert reads the checked claims and the corrections, and approves the report.', 'The AI does the reading. A person signs off.', ''],
+    report: ['Client report', 'Published with a citation beside every finding and a log of every claim checked.', 'The client can see exactly how each conclusion was reached.', ''],
+  };
   const STEPS = [
-    ['The whole system.', 'Open data sets on the left, the AI tools and knowledge base in the middle, what the client receives on the right. Press play, or choose a step.'],
+    ['The whole system.', 'Open data sets on the left, the AI tools and knowledge base in the middle, what the client receives on the right. Hover over a box to see what it connects to; click it for an explanation.'],
     ['1 · Ask.', 'A research question goes to a private web search, which finds and ranks sources. The question is never sent to a cloud AI service.'],
     ['2 · Read.', 'A document reader reads every source in full. A research librarian follows the references in an offline encyclopedia back to the original papers.'],
-    ['3 · Connect.', 'Open data sets (FDA records, adverse-event reports, regulations, patent classes, the literature) are held on the server and linked in one knowledge graph, guided by curated expert knowledge.'],
+    ['3 · Connect.', 'Open data sets are held on the server and linked in one knowledge graph, guided by curated expert knowledge.'],
     ['4 · Check.', 'Every claim in the draft is matched to the source passages that bear on it. It stands only if the exact words and every number are in the source.'],
     ['5 · Deliver.', 'Only checked claims are written up. An expert reviews the result, and the client receives it with a citation beside every finding.'],
   ];
-  const text = arch.querySelector('.arch-text'), play = arch.querySelector('.arch-play');
+  const svg = arch.querySelector('.arch-svg'), text = arch.querySelector('.arch-text'), box = arch.querySelector('.arch-scroll');
   const btns = [...arch.querySelectorAll('.arch-steps [data-s]')];
-  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let step = 0, timer = null, seen = false;
+  const nodes = [...svg.querySelectorAll('.node[data-id]')], links = [...svg.querySelectorAll('[data-n]')];
   const show = n => {
-    step = n; arch.dataset.step = n;
-    btns.forEach(b => +b.dataset.s === n ? b.setAttribute('aria-current', 'step') : b.removeAttribute('aria-current'));
+    arch.dataset.step = n;
+    btns.forEach(b => +b.dataset.s === n ? b.setAttribute('aria-pressed', 'true') : b.setAttribute('aria-pressed', 'false'));
     text.innerHTML = `<b>${STEPS[n][0]}</b> ${STEPS[n][1]}`;
   };
-  const stop = () => { clearTimeout(timer); timer = null; play.textContent = 'Play'; play.setAttribute('aria-pressed', 'false'); };
-  const tick = () => { show((step + 1) % STEPS.length); timer = setTimeout(tick, step === 0 ? 3500 : 5200); };
-  const start = () => { stop(); play.textContent = 'Pause'; play.setAttribute('aria-pressed', 'true'); timer = setTimeout(tick, step === 0 ? 600 : 5200); };
-  play.addEventListener('click', () => { seen = true; timer ? stop() : start(); });
-  btns.forEach(b => b.addEventListener('click', () => { seen = true; stop(); show(+b.dataset.s === step ? 0 : +b.dataset.s); }));
-  if (!reduced && 'IntersectionObserver' in window) new IntersectionObserver(es => es.forEach(e => {
-    if (e.isIntersecting && !seen) { seen = true; start(); }
-    if (!e.isIntersecting && timer) stop();
-  }), { threshold: 0.45 }).observe(arch);
+  btns.forEach(b => b.addEventListener('click', () => show(arch.dataset.step === b.dataset.s ? 0 : +b.dataset.s)));
+
+  const lit = id => {                             // highlight a box, its links and its neighbours
+    arch.classList.toggle('hovering', !!id);
+    const near = new Set([id]);
+    links.forEach(l => { const on = !!id && l.dataset.n.split(' ').includes(id); l.classList.toggle('hl', on); if (on) l.dataset.n.split(' ').forEach(x => near.add(x)); });
+    nodes.forEach(nd => { nd.classList.toggle('hl', !!id && near.has(nd.dataset.id)); nd.classList.toggle('self', nd.dataset.id === id); });
+  };
+  let open = null;
+  const pop = document.createElement('div');
+  pop.className = 'arch-pop'; pop.setAttribute('role', 'dialog'); pop.hidden = true;
+  arch.append(pop);
+  const close = () => { if (!open) return; const g = open; open = null; pop.hidden = true; g.setAttribute('aria-expanded', 'false'); lit(null); g.focus({ preventScroll: true }); };
+  const explain = g => {
+    const [t, what, why, built] = X[g.dataset.id] || [];
+    if (!t) return;
+    if (open) open.setAttribute('aria-expanded', 'false');
+    open = g; g.setAttribute('aria-expanded', 'true'); lit(g.dataset.id);
+    pop.setAttribute('aria-label', t);
+    pop.innerHTML = `<button type="button" class="x" aria-label="Close">×</button><h3>${t}</h3><p>${what}</p><p><b>Why it matters.</b> ${why}</p>${built ? `<p class="built">Built with ${built}</p>` : ''}`;
+    pop.hidden = false;
+    pop.querySelector('.x').addEventListener('click', close);
+    if (innerWidth < 700) { pop.style.left = pop.style.top = ''; pop.classList.add('sheet'); return; }
+    pop.classList.remove('sheet');
+    const r = g.getBoundingClientRect(), c = arch.getBoundingClientRect(), w = pop.offsetWidth, h = pop.offsetHeight;
+    let x = r.right - c.left + 12, y = r.top - c.top + r.height / 2 - h / 2;
+    if (x + w > c.width - 4) x = r.left - c.left - w - 12;
+    pop.style.left = Math.max(4, x) + 'px';
+    pop.style.top = Math.max(4, y) + 'px';
+  };
+  nodes.forEach(g => {
+    g.setAttribute('aria-expanded', 'false');
+    g.addEventListener('mouseenter', () => { if (!open) lit(g.dataset.id); });
+    g.addEventListener('mouseleave', () => { if (!open) lit(null); });
+    g.addEventListener('focus', () => { if (!open) lit(g.dataset.id); });
+    g.addEventListener('blur', () => { if (!open) lit(null); });
+    g.addEventListener('click', ev => { ev.stopPropagation(); open === g ? close() : explain(g); });
+    g.addEventListener('keydown', ev => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); open === g ? close() : explain(g); } });
+  });
+  document.addEventListener('keydown', ev => { if (ev.key === 'Escape') close(); });
+  document.addEventListener('click', ev => { if (open && !pop.contains(ev.target)) close(); });
 }
 
 /* ---- report contents: highlight the section in view ---- */

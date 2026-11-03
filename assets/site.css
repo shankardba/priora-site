@@ -325,18 +325,14 @@ table.methods .sens { font-family: var(--mono); font-size: 12.5px; white-space: 
 .arch-svg .edge.bus { marker-end: none; }
 .arch-svg .ahp { fill: var(--ink-3); } .arch-svg .ahp.on { fill: var(--amber); }
 .arch-svg .el { font-size: 11px; fill: var(--ink-2); paint-order: stroke; stroke: color-mix(in srgb, var(--amber) 5%, var(--paper)); stroke-width: 4px; stroke-linejoin: round; }
-.arch-svg .node, .arch-svg .edge, .arch-svg .el { transition: opacity .45s ease, stroke .3s ease; }
-.arch:not([data-step="0"]) .arch-svg .node, .arch:not([data-step="0"]) .arch-svg .edge, .arch:not([data-step="0"]) .arch-svg .el { opacity: .22; }
-@keyframes arch-flow { to { stroke-dashoffset: -20; } }
-@keyframes arch-pulse { 50% { opacity: .35; } }
-.arch-svg .gd.g1 { animation: arch-pulse 2.4s ease-in-out infinite; } .arch-svg .gd.g2 { animation: arch-pulse 3.1s ease-in-out infinite .8s; }
+.arch-svg .node, .arch-svg .edge, .arch-svg .el { transition: opacity .15s ease; }
+.arch:not([data-step="0"]):not(.hovering) .arch-svg .node, .arch:not([data-step="0"]):not(.hovering) .arch-svg .edge, .arch:not([data-step="0"]):not(.hovering) .arch-svg .el { opacity: .22; }
 .arch-cap { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 20px; align-items: center; margin-top: 18px; padding: 16px 18px; background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; }
 .arch-steps { display: flex; flex-wrap: wrap; gap: 6px; }
 .arch-steps button { font: 500 13.5px var(--ui); color: var(--ink-2); background: var(--surface); border: 1px solid var(--rule-2); border-radius: 20px; padding: 6px 12px 6px 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 7px; }
 .arch-steps button b { display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: var(--surface-2); font: 600 11px var(--mono); color: var(--ink-2); }
-.arch-steps button[aria-current="step"] { border-color: var(--amber); color: var(--ink); }
-.arch-steps button[aria-current="step"] b { background: var(--amber); color: #1b1203; }
-.arch-steps .arch-play { padding-left: 12px; background: var(--navy); color: var(--on-navy); border-color: var(--navy); }
+.arch-steps button[aria-pressed="true"] { border-color: var(--amber); color: var(--ink); }
+.arch-steps button[aria-pressed="true"] b { background: var(--amber); color: #1b1203; }
 .arch-text { margin: 0; color: var(--ink-2); font-size: 15px; min-height: 3em; }
 .arch-text b { color: var(--ink); }
 .arch-notes { list-style: none; margin: 22px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
@@ -344,30 +340,50 @@ table.methods .sens { font-family: var(--mono); font-size: 12.5px; white-space: 
 .arch-notes b { display: block; font: 600 15.5px var(--ui); margin-bottom: 4px; }
 .arch-notes span { color: var(--ink-2); font-size: 14.5px; }
 @media (max-width: 860px) { .arch-cap { grid-template-columns: minmax(0, 1fr); } .arch-notes { grid-template-columns: minmax(0, 1fr); } }
-.arch[data-step="1"] .arch-svg .s1 { opacity: 1; }
-.arch[data-step="1"] .arch-svg .edge.s1 { stroke: var(--amber); stroke-width: 2.2; stroke-dasharray: 7 3; animation: arch-flow .8s linear infinite; marker-end: url(#ahOn); }
-.arch[data-step="1"] .arch-svg .edge.s1[data-both] { marker-start: url(#ahOn); }
-.arch[data-step="1"] .arch-svg .edge.bus.s1 { marker-end: none; }
-.arch[data-step="1"] .arch-svg .node.s1 rect, .arch[data-step="1"] .arch-svg .node.s1 .disc { stroke: var(--amber); stroke-width: 2; }
-.arch[data-step="2"] .arch-svg .s2 { opacity: 1; }
-.arch[data-step="2"] .arch-svg .edge.s2 { stroke: var(--amber); stroke-width: 2.2; stroke-dasharray: 7 3; animation: arch-flow .8s linear infinite; marker-end: url(#ahOn); }
-.arch[data-step="2"] .arch-svg .edge.s2[data-both] { marker-start: url(#ahOn); }
-.arch[data-step="2"] .arch-svg .edge.bus.s2 { marker-end: none; }
-.arch[data-step="2"] .arch-svg .node.s2 rect, .arch[data-step="2"] .arch-svg .node.s2 .disc { stroke: var(--amber); stroke-width: 2; }
-.arch[data-step="3"] .arch-svg .s3 { opacity: 1; }
-.arch[data-step="3"] .arch-svg .edge.s3 { stroke: var(--amber); stroke-width: 2.2; stroke-dasharray: 7 3; animation: arch-flow .8s linear infinite; marker-end: url(#ahOn); }
-.arch[data-step="3"] .arch-svg .edge.s3[data-both] { marker-start: url(#ahOn); }
-.arch[data-step="3"] .arch-svg .edge.bus.s3 { marker-end: none; }
-.arch[data-step="3"] .arch-svg .node.s3 rect, .arch[data-step="3"] .arch-svg .node.s3 .disc { stroke: var(--amber); stroke-width: 2; }
-.arch[data-step="4"] .arch-svg .s4 { opacity: 1; }
-.arch[data-step="4"] .arch-svg .edge.s4 { stroke: var(--amber); stroke-width: 2.2; stroke-dasharray: 7 3; animation: arch-flow .8s linear infinite; marker-end: url(#ahOn); }
-.arch[data-step="4"] .arch-svg .edge.s4[data-both] { marker-start: url(#ahOn); }
-.arch[data-step="4"] .arch-svg .edge.bus.s4 { marker-end: none; }
-.arch[data-step="4"] .arch-svg .node.s4 rect, .arch[data-step="4"] .arch-svg .node.s4 .disc { stroke: var(--amber); stroke-width: 2; }
-.arch[data-step="5"] .arch-svg .s5 { opacity: 1; }
-.arch[data-step="5"] .arch-svg .edge.s5 { stroke: var(--amber); stroke-width: 2.2; stroke-dasharray: 7 3; animation: arch-flow .8s linear infinite; marker-end: url(#ahOn); }
-.arch[data-step="5"] .arch-svg .edge.s5[data-both] { marker-start: url(#ahOn); }
-.arch[data-step="5"] .arch-svg .edge.bus.s5 { marker-end: none; }
-.arch[data-step="5"] .arch-svg .node.s5 rect, .arch[data-step="5"] .arch-svg .node.s5 .disc { stroke: var(--amber); stroke-width: 2; }
 .case.soon { cursor: default; } .case.soon:hover { border-color: var(--rule); } .case.soon .go { color: var(--ink-3); font-weight: 500; }
 .arch-hint { display: none; margin: 0 0 8px; font-size: 13px; color: var(--ink-3); } @media (max-width: 860px) { .arch-hint { display: block; } }
+
+.arch-svg .node { cursor: pointer; outline: none; }
+.arch-svg .node:hover rect, .arch-svg .node:hover .disc, .arch-svg .node:focus-visible rect, .arch-svg .node:focus-visible .disc { stroke: var(--amber); stroke-width: 2; }
+.arch-svg .node:focus-visible rect { stroke-width: 2.6; }
+.arch.hovering .arch-svg .node:not(.hl), .arch.hovering .arch-svg .edge:not(.hl), .arch.hovering .arch-svg .el:not(.hl) { opacity: .22; }
+.arch.hovering .arch-svg .node.hl, .arch.hovering .arch-svg .edge.hl, .arch.hovering .arch-svg .el.hl { opacity: 1; }
+.arch .arch-svg .edge.hl { stroke: var(--amber); stroke-width: 2.2; marker-end: url(#ahOn); }
+.arch .arch-svg .edge.hl[data-both] { marker-start: url(#ahOn); }
+.arch .arch-svg .edge.bus.hl { marker-end: none; }
+.arch .arch-svg .node.self rect, .arch .arch-svg .node.self .disc { stroke: var(--amber); stroke-width: 2.4; }
+.arch { position: relative; }
+.arch-pop { position: absolute; z-index: 5; width: 300px; padding: 16px 18px 14px; background: var(--surface); border: 1px solid var(--rule-2); border-top: 3px solid var(--amber); border-radius: 8px;
+  box-shadow: 0 12px 32px rgba(8, 20, 40, .18); font-size: 14.5px; color: var(--ink-2); }
+.arch-pop h3 { margin: 0 24px 8px 0; font: 600 17px/1.25 var(--ui); color: var(--ink); }
+.arch-pop p { margin: 0 0 8px; }
+.arch-pop p b { color: var(--ink); font-weight: 600; }
+.arch-pop .built { margin: 10px 0 0; padding-top: 8px; border-top: 1px solid var(--rule); font: 500 12px/1.4 var(--mono); color: var(--ink-3); }
+.arch-pop .x { position: absolute; top: 8px; right: 8px; width: 28px; height: 28px; border: 0; border-radius: 50%; background: transparent; color: var(--ink-3); font-size: 20px; line-height: 1; cursor: pointer; }
+.arch-pop .x:hover { background: var(--surface-2); color: var(--ink); }
+.arch-pop.sheet { position: fixed; left: 12px; right: 12px; bottom: 12px; top: auto; width: auto; max-height: 60vh; overflow: auto; }
+.arch[data-step="1"]:not(.hovering) .arch-svg .s1 { opacity: 1; }
+.arch[data-step="1"]:not(.hovering) .arch-svg .edge.s1 { stroke: var(--amber); stroke-width: 2.2; marker-end: url(#ahOn); }
+.arch[data-step="1"]:not(.hovering) .arch-svg .edge.s1[data-both] { marker-start: url(#ahOn); }
+.arch[data-step="1"]:not(.hovering) .arch-svg .edge.bus.s1 { marker-end: none; }
+.arch[data-step="1"]:not(.hovering) .arch-svg .node.s1 rect, .arch[data-step="1"]:not(.hovering) .arch-svg .node.s1 .disc { stroke: var(--amber); stroke-width: 2; }
+.arch[data-step="2"]:not(.hovering) .arch-svg .s2 { opacity: 1; }
+.arch[data-step="2"]:not(.hovering) .arch-svg .edge.s2 { stroke: var(--amber); stroke-width: 2.2; marker-end: url(#ahOn); }
+.arch[data-step="2"]:not(.hovering) .arch-svg .edge.s2[data-both] { marker-start: url(#ahOn); }
+.arch[data-step="2"]:not(.hovering) .arch-svg .edge.bus.s2 { marker-end: none; }
+.arch[data-step="2"]:not(.hovering) .arch-svg .node.s2 rect, .arch[data-step="2"]:not(.hovering) .arch-svg .node.s2 .disc { stroke: var(--amber); stroke-width: 2; }
+.arch[data-step="3"]:not(.hovering) .arch-svg .s3 { opacity: 1; }
+.arch[data-step="3"]:not(.hovering) .arch-svg .edge.s3 { stroke: var(--amber); stroke-width: 2.2; marker-end: url(#ahOn); }
+.arch[data-step="3"]:not(.hovering) .arch-svg .edge.s3[data-both] { marker-start: url(#ahOn); }
+.arch[data-step="3"]:not(.hovering) .arch-svg .edge.bus.s3 { marker-end: none; }
+.arch[data-step="3"]:not(.hovering) .arch-svg .node.s3 rect, .arch[data-step="3"]:not(.hovering) .arch-svg .node.s3 .disc { stroke: var(--amber); stroke-width: 2; }
+.arch[data-step="4"]:not(.hovering) .arch-svg .s4 { opacity: 1; }
+.arch[data-step="4"]:not(.hovering) .arch-svg .edge.s4 { stroke: var(--amber); stroke-width: 2.2; marker-end: url(#ahOn); }
+.arch[data-step="4"]:not(.hovering) .arch-svg .edge.s4[data-both] { marker-start: url(#ahOn); }
+.arch[data-step="4"]:not(.hovering) .arch-svg .edge.bus.s4 { marker-end: none; }
+.arch[data-step="4"]:not(.hovering) .arch-svg .node.s4 rect, .arch[data-step="4"]:not(.hovering) .arch-svg .node.s4 .disc { stroke: var(--amber); stroke-width: 2; }
+.arch[data-step="5"]:not(.hovering) .arch-svg .s5 { opacity: 1; }
+.arch[data-step="5"]:not(.hovering) .arch-svg .edge.s5 { stroke: var(--amber); stroke-width: 2.2; marker-end: url(#ahOn); }
+.arch[data-step="5"]:not(.hovering) .arch-svg .edge.s5[data-both] { marker-start: url(#ahOn); }
+.arch[data-step="5"]:not(.hovering) .arch-svg .edge.bus.s5 { marker-end: none; }
+.arch[data-step="5"]:not(.hovering) .arch-svg .node.s5 rect, .arch[data-step="5"]:not(.hovering) .arch-svg .node.s5 .disc { stroke: var(--amber); stroke-width: 2; }
