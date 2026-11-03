@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pulse Oximeter Case</title>
+<meta name="description" content="A sample Priora device brief for pulse oximeters (FDA product code DQA): rule, clearances, makers, recalls, adverse events, patent classes and a regulatory roadmap.">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,700;1,8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<header class="mast">
+  <div class="wrap">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="index.html" aria-label="Priora home">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="13" fill="none" stroke="#9fb2cd" stroke-width="1.5"/><circle cx="16" cy="16" r="7.5" fill="none" stroke="#9fb2cd" stroke-width="1.2" opacity=".6"/><circle cx="16" cy="3" r="3" fill="#f2a93b"/><circle cx="16" cy="16" r="2" fill="#e5edf8"/></svg>
+        Priora
+      </a>
+      <div class="links">
+        <a href="index.html#how">How it works</a>
+        <a href="index.html#evidence">The evidence</a>
+        <a class="btn primary" href="index.html#cases">Case studies</a>
+      </div>
+    </nav>
+    <div class="rmast">
+      <p class="eyebrow" style="color:var(--amber)">Case study · device landscape</p>
+      <h1>Pulse oximeters</h1>
+      <div class="meta"><span>FDA product code DQA</span><span>21 CFR 870.2700</span><span>Class II</span><span>CPC A61B5/1455</span></div>
+      <p>What a client receives for one device, shown here for a well-known device type. FDA figures are real and current. The patent sections show the layout the patent check fills in.</p>
+    </div>
+  </div>
+</header>
+
+<main class="wrap report">
+  <nav class="toc" aria-label="Report contents">
+    <b>Contents</b>
+    <a href="#rule">The device and its rule</a>
+    <a href="#clearances">Clearances and review time</a>
+    <a href="#makers">Who makes them</a>
+    <a href="#recalls">Recalls</a>
+    <a href="#events">Adverse events</a>
+    <a href="#patents">Patent classes</a>
+    <a href="#roadmap">Regulatory roadmap</a>
+    <a href="#trace">Trace matrix</a>
+    <a href="#method">How this was made</a>
+  </nav>
+
+  <div>
+    <section class="finding" id="rule">
+      <p class="eyebrow">1 · The device and its rule</p>
+      <h2>A Class II device with a 510(k) path</h2>
+      <p class="lead">Pulse oximeters sit under one regulation in FDA's cardiovascular panel. New ones reach the US market through a 510(k), by showing they are substantially equivalent to a device already cleared.</p>
+      <blockquote class="cfr">An oximeter is a device used to transmit radiation at a known wavelength(s) through blood and to measure the blood oxygen saturation based on the amount of reflected or scattered radiation.<cite>21 CFR 870.2700(a) · Class II (performance standards)</cite></blockquote>
+      <div class="kv">
+        <div><b>DQA</b><span>FDA product code</span></div>
+        <div><b>II</b><span>device class</span></div>
+        <div><b data-k="ex.k510">727</b><span>510(k)s cleared</span></div>
+        <div><b data-k="ex.gudid">9,948</b><span>device identifiers in GUDID</span></div>
+      </div>
+      <p>FDA files this product code under the cardiovascular panel, the panel of its regulation, while its 510(k)s are reviewed by the anesthesiology team. Priora keeps both, because the review team decides which reviewers and guidance you will meet.</p>
+    </section>
+
+    <section class="finding" id="clearances">
+      <p class="eyebrow">2 · Clearances and review time</p>
+      <h2>Steady clearances, slower reviews</h2>
+      <p class="lead">FDA clears a steady stream of oximeters every year, but the median time from submission to decision has risen sharply since 2020.</p>
+      <div class="chartbox"><div class="cap">510(k) decisions per year</div><div class="chart" id="k-chart"></div>
+        <div class="src">Clearance types: <span id="ct-list">Traditional 575 · Special 140 · Abbreviated 12</span></div></div>
+      <div class="chartbox"><div class="cap">Median days from submission to decision</div><div class="chart" id="k-days"></div>
+        <div class="src">Years with fewer than 5 decisions are left out.</div></div>
+      <p>For planning: budget for the recent review times, not the long-run average, and expect questions on accuracy across skin tones, which FDA's January 2025 draft guidance on pulse oximeters puts at the centre of review.</p>
+    </section>
+
+    <section class="finding" id="makers">
+      <p class="eyebrow">3 · Who makes them</p>
+      <h2>A crowded, fragmented field</h2>
+      <p class="lead"><b data-k="ex.makers">262</b> different companies hold oximeter clearances. The five most active hold only <b data-k="ex.top5">24%</b> of them.</p>
+      <p>A crowded field means many possible predicates, so the choice of predicate matters: Priora checks each candidate's own recall and adverse-event history before you rely on it. The full report names the makers and lists their clearances; this public sample counts them only.</p>
+    </section>
+
+    <section class="finding" id="recalls">
+      <p class="eyebrow">4 · Recalls</p>
+      <h2>Components cause most recalls</h2>
+      <p class="lead">Nonconforming materials and components lead the recorded root causes, well ahead of design or labelling.</p>
+      <div class="chartbox"><div class="cap">Recalled oximeter products, by year the recall began</div><div class="chart" id="r-chart"></div></div>
+      <div class="chartbox"><div class="cap">Root cause recorded by FDA</div><div class="chart" id="r-causes"></div>
+        <div class="src">Source: FDA device recall database via openFDA.</div></div>
+      <p>For your design: supplier controls and incoming inspection of optical and electronic components deserve early attention in the quality plan.</p>
+    </section>
+
+    <section class="finding" id="events">
+      <p class="eyebrow">5 · Adverse events</p>
+      <h2>What gets reported in the field</h2>
+      <p class="lead"><b id="m-tot">—</b> adverse-event reports name an oximeter, including <b id="m-deaths">—</b> reports of a death. A report records an event; it does not establish that the device caused it.</p>
+      <div class="chartbox"><div class="cap">MAUDE reports naming product code DQA, by year received</div><div class="chart" id="m-chart"></div>
+        <div class="src" id="m-note" hidden>The adverse-event archive is still loading; these counts will rise.</div></div>
+      <p>The full report reads the event narratives and groups them by failure mode, so your risk file starts from what actually happens in use.</p>
+    </section>
+
+    <section class="finding" id="patents">
+      <p class="eyebrow">6 · Patent classes</p>
+      <h2>Where oximetry patents are filed</h2>
+      <p class="lead">Patent offices file oximetry under one branch of the Cooperative Patent Classification. The patent check searches this branch and its neighbours for each feature of your design.</p>
+      <div class="tree">
+        <div><span class="mono">A61B5/00</span><span>Measuring for diagnostic purposes</span><span class="n"></span></div>
+        <div class="pad1"><span class="mono">A61B5/145</span><span>Measuring characteristics of blood in vivo, e.g. gas concentration</span><span class="n"></span></div>
+        <div class="pad2"><span class="mono">A61B5/1455</span><span>using optical sensors, e.g. spectral photometrical oximeters</span><span class="n"></span></div>
+        <div class="pad3"><span class="mono">A61B5/14551</span><span>for measuring blood gases</span><span class="n"></span></div>
+        <div class="pad3"><span class="mono">A61B5/14552</span><span>details of sensors specially adapted therefor</span><span class="n"></span></div>
+        <div class="pad1"><span class="mono">A61B5/7207</span><span>Signal processing: removal of noise induced by motion artefacts</span><span class="n"></span></div>
+        <div class="pad1"><span class="mono">A61B5/6838</span><span>Sensors attached by clamps or clips</span><span class="n"></span></div>
+      </div>
+      <div class="illus">
+        <span class="tagx">Illustration of the patent check</span>
+        <div class="fig-check">
+          <div class="r"><span class="cat x">X</span><span>Feature: reflectance sensing at the wrist · claims on optical sensor geometry</span><span class="st act">Active · US EP</span></div>
+          <div class="r"><span class="cat y">Y</span><span>Feature: motion filtering · relevant together with the sensor claims</span><span class="st pen">Pending · US</span></div>
+          <div class="r"><span class="cat a">A</span><span>Feature: finger clip · background, free to use</span><span class="st exp">Expired</span></div>
+        </div>
+        <p class="formnote">In a client report each row names the patent or application, the claim that touches the feature, its family, and its status in each country. Flags are for your patent counsel to assess; they are not legal opinions.</p>
+      </div>
+    </section>
+
+    <section class="finding" id="roadmap">
+      <p class="eyebrow">7 · Regulatory roadmap</p>
+      <h2>The path to a US clearance</h2>
+      <p class="lead">A pulse oximeter is a Class II device cleared through a traditional 510(k). The work that decides the schedule is the clinical accuracy study and, for connected devices, cybersecurity.</p>
+
+      <div class="road">
+        <div><p><b>Confirm the classification and pathway</b><span>Product code DQA, <span class="mono">21 CFR 870.2700</span>, Class II with special controls through performance standards. The device is not 510(k)-exempt, so a premarket notification under <span class="mono">21 CFR 807 Subpart E</span> is required. Decide early whether it is prescription or over-the-counter and whether it is meant for spot checks or continuous monitoring: both change the testing FDA expects and the labelling.</span></p></div>
+        <div><p><b>Choose and vet predicates</b><span>Pick a cleared oximeter with the same intended use and the same sensing method: transmittance (finger, ear) and reflectance (wrist, forehead) are tested to different accuracy expectations. Check every candidate's recalls and adverse-event reports before relying on it; a predicate with a recall for the component you share invites questions.</span></p></div>
+        <div><p><b>Run the clinical accuracy study first</b><span>A controlled desaturation study in healthy adults compares the device's SpO₂ with arterial blood measured by CO-oximetry, across 70 to 100 % saturation, and reports the root-mean-square accuracy (A<sub>rms</sub>) to <span class="mono">ISO 80601-2-61</span>. FDA's 2013 pulse oximeter guidance expects A<sub>rms</sub> of 3.0 % or better for transmittance sensors and 3.5 % for reflectance. FDA's January 2025 draft guidance adds larger cohorts with a spread of skin pigmentation, measured objectively rather than by self-report, and a performance comparison across skin tones. Book the study lab early: it is usually the longest lead time.</span></p></div>
+        <div><p><b>Assemble the rest of the evidence</b><span>Bench, safety, software and human-factors evidence, listed in the evidence plan below. Each item answers a recognised consensus standard or an FDA guidance, which shortens review.</span></p></div>
+        <div><p><b>Quality system and risk file</b><span>Design controls, supplier controls and complaint handling under the Quality Management System Regulation (<span class="mono">21 CFR 820</span>, in force since 2 February 2026), which incorporates <span class="mono">ISO 13485:2016</span>. The risk file follows <span class="mono">ISO 14971:2019</span> and should draw its hazards from real field data such as the recalls and adverse events above.</span></p></div>
+        <div><p><b>Submit through eSTAR</b><span>510(k)s are submitted electronically in the eSTAR template, which checks completeness up front. Content follows <span class="mono">21 CFR 807.87</span>: device description, substantial-equivalence comparison, performance data and proposed labelling.</span></p></div>
+        <div><p><b>Plan for the real review clock</b><span>FDA's performance goal is a decision within 90 FDA review days, but the clock stops while you answer an Additional Information request, which most oximeter submissions receive. Calendar time is what matters for launch: the recent median for this product code is <b><span data-k="ex.lastDays">187</span> days</b> (<span data-k="ex.lastYear">2026</span> decisions).</span></p></div>
+        <div><p><b>After clearance</b><span>Register the establishment and list the device (<span class="mono">21 CFR 807 Subpart B</span>), label with a UDI and submit the device record to GUDID (<span class="mono">21 CFR 830</span>), report adverse events under <span class="mono">21 CFR 803</span> and corrections or removals under <span class="mono">21 CFR 806</span>. A design or labelling change that could affect safety or effectiveness may need a new 510(k).</span></p></div>
+      </div>
+
+      <h3 style="margin-top:8px">Evidence plan</h3>
+      <div class="tablewrap"><table class="matrix plan">
+        <tr><th>Area</th><th>Standard or rule</th><th>FDA guidance</th><th>What the submission shows</th></tr>
+        <tr><td>SpO₂ and pulse-rate accuracy</td><td class="mono">ISO 80601-2-61</td><td>Pulse oximeters, 510(k) (2013); 2025 draft on performance testing and labelling</td><td>Desaturation study, A<sub>rms</sub> across 70–100 %, results by skin pigmentation, bench accuracy under low perfusion and motion</td></tr>
+        <tr><td>Electrical safety</td><td class="mono">IEC 60601-1</td><td>Recognised consensus standards</td><td>Test report from an accredited lab, essential performance defined</td></tr>
+        <tr><td>Electromagnetic compatibility</td><td class="mono">IEC 60601-1-2</td><td>EMC of electrically powered devices (2022)</td><td>Emissions and immunity, with the SpO₂ reading held within limits during immunity tests</td></tr>
+        <tr><td>Alarms</td><td class="mono">IEC 60601-1-8</td><td>—</td><td>Alarm conditions, priorities and limits, for monitors that alarm</td></tr>
+        <tr><td>Home use</td><td class="mono">IEC 60601-1-11</td><td>Design considerations for home-use devices</td><td>Environmental and lay-user requirements, if sold for home use</td></tr>
+        <tr><td>Usability</td><td class="mono">IEC 62366-1 · IEC 60601-1-6</td><td>Applying human factors and usability engineering (2016)</td><td>Use-related risk analysis; summative test when critical tasks exist</td></tr>
+        <tr><td>Biocompatibility</td><td class="mono">ISO 10993-1, -5, -10, -23</td><td>Use of ISO 10993-1 (2023)</td><td>Cytotoxicity, sensitisation and irritation for skin-contacting sensor materials</td></tr>
+        <tr><td>Software</td><td class="mono">IEC 62304</td><td>Content of premarket submissions for device software functions (2023)</td><td>Documentation level, architecture, requirements, verification and anomaly list</td></tr>
+        <tr><td>Wireless and cybersecurity</td><td class="mono">FD&amp;C Act §524B · ANSI C63.27</td><td>Cybersecurity in medical devices; radio-frequency wireless technology</td><td>For Bluetooth or app-connected devices: threat model, SBOM, vulnerability plan, coexistence testing</td></tr>
+        <tr><td>Risk management</td><td class="mono">ISO 14971:2019</td><td>—</td><td>Risk management file tied to field data and to the requirements</td></tr>
+        <tr><td>Labelling</td><td class="mono">21 CFR 801</td><td>Pulse oximeter guidance</td><td>Accuracy statement with A<sub>rms</sub> and range, skin-pigmentation and low-perfusion limitations, Rx or OTC statements</td></tr>
+      </table></div>
+      <p>Outside the US the same evidence largely carries over: under the EU MDR, Annex VIII Rule 10 places oximeters in Class IIa, or IIb when they monitor vital parameters in situations where a change could mean immediate danger, which brings in a notified body.</p>
+    </section>
+
+    <section class="finding" id="trace">
+      <p class="eyebrow">8 · Trace matrix</p>
+      <h2>Requirements traced to evidence</h2>
+      <p class="lead">Each requirement is checked for clarity and completeness, then traced to its design element, its test, the standard it answers and any patent claim that touches it.</p>
+      <div class="illus">
+        <span class="tagx">Illustration</span>
+        <div class="tablewrap"><table class="matrix">
+          <tr><th>Requirement</th><th>Design element</th><th>Verification</th><th>Standard</th><th>Patent</th><th>Review</th></tr>
+          <tr><td>SpO₂ A<sub>rms</sub> ≤ 3.0 % over 70–100 %, stated in labelling</td><td>Optical front end, calibration curve</td><td>Controlled desaturation study</td><td class="mono">ISO 80601-2-61</td><td><span class="cat x">X</span></td><td>Clear</td></tr>
+          <tr><td>Alarm when perfusion is too low to measure</td><td>Alarm logic</td><td class="gap">No test yet</td><td class="mono">IEC 60601-1-8</td><td><span class="cat y">Y</span></td><td>Gap</td></tr>
+          <tr><td>Device shall be easy to use</td><td>—</td><td class="gap">Not testable</td><td>—</td><td></td><td class="gap">Rewrite: name the user, task and pass mark</td></tr>
+        </table></div>
+      </div>
+    </section>
+
+    <section class="finding" id="method">
+      <p class="eyebrow">9 · How this was made</p>
+      <h2>Sources and limits</h2>
+      <p>FDA figures come from the official 510(k), recall and MAUDE files (openFDA), device identifiers from AccessGUDID, and regulation text from the eCFR, refreshed as FDA publishes. Patent classes are from the Cooperative Patent Classification scheme. Counts depend on how FDA codes each record; a device coded under another product code is not counted here.</p>
+      <p>A Priora report flags what deserves attention and shows the record behind every finding. It is not legal advice and does not decide infringement, validity or regulatory strategy.</p>
+      <p><a class="btn primary" href="index.html#cases">More case studies</a></p>
+    </section>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>Priora · a research engine for medical technology</span>
+    <span>FDA data from openFDA, AccessGUDID and eCFR. <span data-k="gen">Figures as of 2026-11-02</span>.</span>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+</body>
+</html>

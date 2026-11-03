@@ -103,7 +103,8 @@ function fill(D) {
   }
   if (h('ct-list')) h('ct-list').textContent = ex.clearance_types.map(([t, n]) => `${t} ${fmt(n)}`).join(' · ');
 }
-fetch('data/pitch.json').then(r => r.json()).then(fill).catch(() => {});
+window.PrioraCharts = { el, txt, frame, axes, bars, line, stack, hbars, legend, fmt, short, niceMax, css };
+if (document.querySelector('[data-k]')) fetch('data/pitch.json').then(r => r.json()).then(fill).catch(() => {});
 
 /* ---- contact form: not connected yet, says so ---- */
 const form = $('#ask');
@@ -114,6 +115,37 @@ if (form) form.addEventListener('submit', ev => {
   note.className = 'formnote ok';
   note.textContent = 'Thank you. This preview site is not connected yet, so nothing was sent.';
 });
+
+/* ---- architecture diagram: step through, autoplay while in view (not with reduced motion) ---- */
+const arch = document.getElementById('arch');
+if (arch) {
+  const STEPS = [
+    ['The whole system.', 'Open data sets on the left, the AI tools and knowledge base in the middle, what the client receives on the right. Press play, or choose a step.'],
+    ['1 · Ask.', 'A research question goes to a private web search, which finds and ranks sources. The question is never sent to a cloud AI service.'],
+    ['2 · Read.', 'A document reader reads every source in full. A research librarian follows the references in an offline encyclopedia back to the original papers.'],
+    ['3 · Connect.', 'Open data sets (FDA records, adverse-event reports, regulations, patent classes, the literature) are held on the server and linked in one knowledge graph, guided by curated expert knowledge.'],
+    ['4 · Check.', 'Every claim in the draft is matched to the source passages that bear on it. It stands only if the exact words and every number are in the source.'],
+    ['5 · Deliver.', 'Only checked claims are written up. An expert reviews the result, and the client receives it with a citation beside every finding.'],
+  ];
+  const text = arch.querySelector('.arch-text'), play = arch.querySelector('.arch-play');
+  const btns = [...arch.querySelectorAll('.arch-steps [data-s]')];
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let step = 0, timer = null, seen = false;
+  const show = n => {
+    step = n; arch.dataset.step = n;
+    btns.forEach(b => +b.dataset.s === n ? b.setAttribute('aria-current', 'step') : b.removeAttribute('aria-current'));
+    text.innerHTML = `<b>${STEPS[n][0]}</b> ${STEPS[n][1]}`;
+  };
+  const stop = () => { clearTimeout(timer); timer = null; play.textContent = 'Play'; play.setAttribute('aria-pressed', 'false'); };
+  const tick = () => { show((step + 1) % STEPS.length); timer = setTimeout(tick, step === 0 ? 3500 : 5200); };
+  const start = () => { stop(); play.textContent = 'Pause'; play.setAttribute('aria-pressed', 'true'); timer = setTimeout(tick, step === 0 ? 600 : 5200); };
+  play.addEventListener('click', () => { seen = true; timer ? stop() : start(); });
+  btns.forEach(b => b.addEventListener('click', () => { seen = true; stop(); show(+b.dataset.s === step ? 0 : +b.dataset.s); }));
+  if (!reduced && 'IntersectionObserver' in window) new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting && !seen) { seen = true; start(); }
+    if (!e.isIntersecting && timer) stop();
+  }), { threshold: 0.45 }).observe(arch);
+}
 
 /* ---- report contents: highlight the section in view ---- */
 const toc = document.querySelectorAll('.toc a');

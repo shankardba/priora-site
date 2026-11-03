@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Priora</title>
-<meta name="description" content="Patent and regulatory intelligence for medical device teams: what is already patented, what FDA has cleared and recalled, and what your design must trace to.">
+<meta name="description" content="Priora connects the public record of medical technology with private AI research. Case studies: pulse oximeters, detecting blood in water, measuring blood glucose.">
 <meta property="og:title" content="Priora: know what came before you build">
-<meta property="og:description" content="Patent checks, FDA landscapes, trace matrices and regulatory roadmaps for medical devices.">
+<meta property="og:description" content="How Priora researches a medical-technology question, start to finish. Three case studies.">
 <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,22 +23,21 @@
         Priora
       </a>
       <div class="links">
-        <a href="#what">What you get</a>
+        <a href="#how">How it works</a>
         <a href="#evidence">The evidence</a>
-        <a class="btn primary" href="sample.html">Sample report</a>
+        <a class="btn primary" href="#cases">Case studies</a>
       </div>
     </nav>
 
     <div class="hero">
       <div>
-        <p class="eyebrow" style="color:var(--amber)">Patent and regulatory intelligence for medical devices</p>
+        <p class="eyebrow" style="color:var(--amber)">A research engine for medical technology</p>
         <h1>Know what came <em>before</em> you build.</h1>
-        <p class="lead">Priora checks a new device against worldwide patents, every FDA clearance, recall and adverse-event report, and the rules that apply. Then it writes the trace matrix and regulatory roadmap your team works from.</p>
+        <p class="lead">Priora connects the public record of medical technology (FDA clearances, recalls, 26 million adverse-event reports, patent classes and the research literature) and researches the open web with AI models that run on our own hardware. These case studies show how it answers a technical question, start to finish.</p>
         <div class="ctas">
-          <a class="btn primary" href="sample.html">See a sample report</a>
-          <a class="btn ghost" href="#what">What you get</a>
+          <a class="btn primary" href="#cases">Read the case studies</a>
+          <a class="btn ghost" href="#how">How a case is researched</a>
         </div>
-        <p class="fine">For device teams of any size. Findings in days, every one linked to its source.</p>
       </div>
 
       <figure class="sheet" style="margin:0" aria-label="Example device brief for a pulse oximeter">
@@ -59,24 +58,87 @@
 </header>
 
 <main>
-  <section>
+  <section id="cases">
     <div class="wrap">
-      <p class="eyebrow">Why it matters</p>
-      <h2>The expensive surprises come late</h2>
-      <p class="sub">Most device programmes learn these things after the design is frozen, when every change costs months.</p>
-      <div class="cards3">
-        <div class="card"><span class="when">Found at design freeze</span><h3>A patent that reads on your design</h3><p>A competitor's claim covers the way your sensor works, in the one market you planned to launch in first.</p></div>
-        <div class="card"><span class="when">Found in FDA review</span><h3>A predicate with a recall history</h3><p>The device you compared yourself to was recalled for the same component you chose. Reviewers ask why yours is different.</p></div>
-        <div class="card"><span class="when">Found in an audit</span><h3>Requirements that trace to nothing</h3><p>A requirement has no test, or a test cites the wrong standard clause. The auditor writes it up.</p></div>
+      <p class="eyebrow">Case studies</p>
+      <h2>Three questions, researched end to end</h2>
+      <p class="sub">Each case starts from a plain question and ends with findings you can check: every number links back to the FDA record, the patent class or the paper behind it.</p>
+      <div class="cases">
+        <a class="case soon" aria-disabled="true">
+          <span class="kicker">Detection methods · research in progress</span>
+          <h3>How do you detect blood in water?</h3>
+          <p>From crime-scene chemistry to the optical sensors that watch dialysis machines for a leaking filter, compared by principle, sensitivity and where each is used.</p>
+          <div class="figs"><div><b>10,229</b><span>dialysis reports that mention a blood leak</span></div><div><b>474</b><span>510(k)s for dialysis systems</span></div></div>
+          <span class="go">Case study in preparation</span>
+        </a>
+        <a class="case soon" aria-disabled="true">
+          <span class="kicker">Measurement · research in progress</span>
+          <h3>How is glucose measured in blood?</h3>
+          <p>Enzymes, test strips, continuous monitors and the long search for a non-invasive method, read against 3.8 million adverse-event reports.</p>
+          <div class="figs"><div><b>3.4M</b><span>reports on continuous glucose monitors</span></div><div><b>1</b><span>non-invasive glucose device ever approved</span></div></div>
+          <span class="go">Case study in preparation</span>
+        </a>
+        <a class="case" href="case-pulse-oximeters.html">
+          <span class="kicker">Device landscape</span>
+          <h3>What does it take to bring a pulse oximeter to market?</h3>
+          <p>The rule, the clearances, the makers, the recalls and the field reports for one device type, with a regulatory roadmap and evidence plan.</p>
+          <div class="figs"><div><b data-k="ex.k510">727</b><span>510(k) clearances</span></div><div><b><span data-k="ex.lastDays">187</span> days</b><span>median review, latest year</span></div></div>
+          <span class="go">Read the case study</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt" id="how">
+    <div class="wrap">
+      <p class="eyebrow">How a case is researched</p>
+      <h2>Open data, a custom knowledge base, and open-source AI on one private server.</h2>
+      <p class="sub">Every part runs on open-source software on a server the client controls. Questions, drafts and findings never pass through a cloud AI service. Follow a research question through the five steps.</p>
+      <figure class="arch" id="arch" data-step="0">
+        <p class="arch-hint">Swipe sideways to see the whole diagram.</p>
+        <div class="arch-scroll"><!--ARCH--><svg class="arch-svg" viewBox="0 0 1200 580" role="img" aria-label="Architecture: open data sets feed a custom knowledge base on one private server, where open-source AI tools search, read, connect and check, and an expert reviews the client deliverables."><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1L10,5L0,9z" class="ahp"/></marker><marker id="ahOn" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1L10,5L0,9z" class="ahp on"/></marker></defs><text class="ch" x="20" y="80">OPEN DATA SETS</text><text class="ch" x="940" y="80">WHAT THE CLIENT GETS</text><rect class="panel" x="290" y="84" width="610" height="482" rx="14"/><text class="ph" x="310" y="552">CUSTOM KNOWLEDGE BASE · ON ONE PRIVATE SERVER</text><g class="edges"><path class="edge s1" d="M500,36H387V128"/><text class="el s1" x="443" y="30" text-anchor="middle">asks</text><path class="edge s1" d="M312,154L234,126" data-both="1"/><text class="el s1" x="262" y="126" text-anchor="middle">searches</text><path class="edge s2" d="M462,159H516"/><text class="el s2" x="490" y="151" text-anchor="middle">sources</text><path class="edge s2" d="M595,186V258"/><text class="el s2" x="603" y="226" text-anchor="start">full text</text><path class="edge s2" d="M803,186L656,288"/><text class="el s2" x="750" y="232" text-anchor="start">references → papers</text><path class="edge s3 bus" d="M230,194H262M230,264H262M230,334H262M230,404H262M230,474H262M262,194V474"/><path class="edge s3" d="M262,334H519"/><text class="el s3" x="400" y="326" text-anchor="middle">loaded and kept current</text><path class="edge s3" d="M462,264L532,294"/><text class="el s3" x="500" y="266" text-anchor="middle">guides</text><path class="edge s4" d="M667,344H724"/><text class="el s4" x="696" y="336" text-anchor="middle">passages</text><path class="edge s4" d="M803,374L655,466"/><text class="el s4" x="724" y="432" text-anchor="start">evidence</text><path class="edge s4" d="M462,497H516"/><text class="el s4" x="490" y="489" text-anchor="middle">judges</text><path class="edge s5" d="M670,497H724"/><text class="el s5" x="698" y="489" text-anchor="middle">checked</text><path class="edge s5" d="M878,497H915V124H936"/><text class="el s5" x="896" y="489" text-anchor="middle">writes</text><path class="edge s5" d="M915,194H936"/><path class="edge s5" d="M915,264H936"/><path class="edge s5" d="M915,334H936"/><path class="edge s5" d="M1060,362V396"/><text class="el s5" x="1068" y="384" text-anchor="start">submitted</text><path class="edge s5" d="M1060,450V476"/><text class="el s5" x="1068" y="469" text-anchor="start">approves</text></g><g class="node ai s1 s2" id="n-search"><title>Vane (Perplexica + SearXNG)</title><rect x="312" y="132" width="150" height="54" rx="8"/><text class="t" x="326" y="156.0">Private web search</text><text class="s" x="326" y="173.0">finds sources</text></g><g class="node ai s2" id="n-reader"><title>trafilatura and Docling</title><rect x="520" y="132" width="150" height="54" rx="8"/><text class="t" x="534" y="156.0">Document reader</text><text class="s" x="534" y="173.0">reads sources in full</text></g><g class="node ai s2" id="n-libr"><title>Daemon, with an offline encyclopedia (Kiwix)</title><rect x="728" y="132" width="150" height="54" rx="8"/><text class="t" x="742" y="156.0">Research librarian</text><text class="s" x="742" y="173.0">follows references</text></g><g class="node kb s3" id="n-expert"><title>Priora Hub: curated regulatory and patent knowledge</title><rect x="312" y="226" width="150" height="60" rx="8"/><text class="t" x="326" y="253.0">Expert knowledge</text><text class="s" x="326" y="270.0">rules and standards</text></g><g class="node graph s2 s3 s4" id="n-graph"><title>Graph database (PostgreSQL with Apache AGE) holding every record and its links</title><circle class="disc" cx="595" cy="334" r="72"/><path class="gl" d="M595.0,334.0L623.9,342.9M595.0,334.0L595.4,364.2M595.0,334.0L566.4,343.8M595.0,334.0L576.9,309.8M595.0,334.0L612.4,309.3M623.9,342.9L595.4,364.2M623.9,342.9L612.4,309.3M623.9,342.9L650.9,339.6M623.9,342.9L634.2,374.2M595.4,364.2L566.4,343.8M595.4,364.2L599.2,390.0M595.4,364.2L562.2,379.6M566.4,343.8L576.9,309.8M566.4,343.8L562.2,379.6M566.4,343.8L540.6,347.8M576.9,309.8L612.4,309.3M576.9,309.8L544.4,309.6M576.9,309.8L571.9,282.8M612.4,309.3L610.2,279.9M612.4,309.3L641.4,302.4M650.9,339.6L634.2,374.2M650.9,339.6L641.4,302.4M634.2,374.2L599.2,390.0M599.2,390.0L562.2,379.6M562.2,379.6L540.6,347.8M540.6,347.8L544.4,309.6M544.4,309.6L571.9,282.8M571.9,282.8L610.2,279.9M610.2,279.9L641.4,302.4"/><circle class="gd g0" cx="595.0" cy="334.0" r="5"/><circle class="gd g1" cx="623.9" cy="342.9" r="3.6"/><circle class="gd g2" cx="595.4" cy="364.2" r="3.6"/><circle class="gd g0" cx="566.4" cy="343.8" r="3.6"/><circle class="gd g1" cx="576.9" cy="309.8" r="3.6"/><circle class="gd g2" cx="612.4" cy="309.3" r="3.6"/><circle class="gd g0" cx="650.9" cy="339.6" r="3"/><circle class="gd g1" cx="634.2" cy="374.2" r="3"/><circle class="gd g2" cx="599.2" cy="390.0" r="3"/><circle class="gd g0" cx="562.2" cy="379.6" r="3"/><circle class="gd g1" cx="540.6" cy="347.8" r="3"/><circle class="gd g2" cx="544.4" cy="309.6" r="3"/><circle class="gd g0" cx="571.9" cy="282.8" r="3"/><circle class="gd g1" cx="610.2" cy="279.9" r="3"/><circle class="gd g2" cx="641.4" cy="302.4" r="3"/><text class="t" x="595" y="428" text-anchor="middle">Connected knowledge graph</text><text class="s" x="595" y="444" text-anchor="middle">every record, linked</text></g><g class="node ai s4" id="n-meaning"><title>Embedding search (nomic-embed-text)</title><rect x="728" y="314" width="150" height="60" rx="8"/><text class="t" x="742" y="341.0">Meaning search</text><text class="s" x="742" y="358.0">finds the passage</text></g><g class="node ai s1 s4 s5" id="n-lm"><title>Open-weight model served by Ollama, on the server</title><rect x="312" y="470" width="150" height="54" rx="8"/><text class="t" x="326" y="494.0">Language model</text><text class="s" x="326" y="511.0">powers each AI step</text></g><g class="node ai s4" id="n-check"><title>Exact-quote and number checks on every claim</title><rect x="520" y="470" width="150" height="54" rx="8"/><text class="t" x="534" y="494.0">Fact checker</text><text class="s" x="534" y="511.0">claim vs. source</text></g><g class="node ai s5" id="n-writer"><title>Findings and methods from checked claims only</title><rect x="728" y="470" width="150" height="54" rx="8"/><text class="t" x="742" y="494.0">Report writer</text><text class="s" x="742" y="511.0">uses checked claims</text></g><g class="node data s1" id="n-web"><title>Public web pages, found through a private metasearch engine (SearXNG)</title><rect x="20" y="96" width="210" height="56" rx="8"/><text class="t" x="34" y="121.0">Open web</text><text class="s" x="34" y="138.0">searched privately</text></g><g class="node data s3" id="n-lit"><title>NLM PubMed baseline, held locally</title><rect x="20" y="166" width="210" height="56" rx="8"/><text class="t" x="34" y="191.0">Scientific literature</text><text class="s" x="34" y="208.0">PubMed, 38M citations</text></g><g class="node data s3" id="n-fda"><title>openFDA 510(k), PMA, recalls; AccessGUDID</title><rect x="20" y="236" width="210" height="56" rx="8"/><text class="t" x="34" y="261.0">FDA device records</text><text class="s" x="34" y="278.0">clearances, approvals, recalls</text></g><g class="node data s3" id="n-mdr"><title>FDA MAUDE database</title><rect x="20" y="306" width="210" height="56" rx="8"/><text class="t" x="34" y="331.0">Adverse-event reports</text><text class="s" x="34" y="348.0">26.6M field reports</text></g><g class="node data s3" id="n-cfr"><title>eCFR Title 21, Parts 800-898</title><rect x="20" y="376" width="210" height="56" rx="8"/><text class="t" x="34" y="401.0">Regulations</text><text class="s" x="34" y="418.0">21 CFR, medical devices</text></g><g class="node data s3" id="n-cpc"><title>Cooperative Patent Classification scheme</title><rect x="20" y="446" width="210" height="56" rx="8"/><text class="t" x="34" y="471.0">Patent classification</text><text class="s" x="34" y="488.0">254,314 CPC codes</text></g><g class="node out s5" id="n-o1"><rect x="940" y="96" width="240" height="56" rx="8"/><text class="t" x="954" y="121.0">Checked findings</text><text class="s" x="954" y="138.0">each with its sources</text></g><g class="node out s5" id="n-o2"><rect x="940" y="166" width="240" height="56" rx="8"/><text class="t" x="954" y="191.0">Methods compared</text><text class="s" x="954" y="208.0">principle, performance, limits</text></g><g class="node out s5" id="n-o3"><rect x="940" y="236" width="240" height="56" rx="8"/><text class="t" x="954" y="261.0">Device and patent landscape</text><text class="s" x="954" y="278.0">FDA record, patent classes</text></g><g class="node out s5" id="n-o4"><rect x="940" y="306" width="240" height="56" rx="8"/><text class="t" x="954" y="331.0">Regulatory roadmap</text><text class="s" x="954" y="348.0">rule, path, evidence plan</text></g><g class="node out s5" id="n-review"><rect x="940" y="400" width="240" height="50" rx="8"/><text class="t" x="954" y="422.0">Expert review</text><text class="s" x="954" y="439.0">approves before release</text></g><g class="node out accent s5" id="n-report"><rect x="940" y="480" width="240" height="56" rx="8"/><text class="t" x="954" y="505.0">Client report</text><text class="s" x="954" y="522.0">published with citations</text></g><g class="node q s1" id="n-q"><rect x="500" y="18" width="190" height="36" rx="18"/><text class="t" x="595" y="41" text-anchor="middle">Research question</text></g></svg><!--/ARCH--></div>
+        <figcaption class="arch-cap">
+          <div class="arch-steps" role="group" aria-label="Steps">
+            <button type="button" data-s="1"><b>1</b>Ask</button>
+            <button type="button" data-s="2"><b>2</b>Read</button>
+            <button type="button" data-s="3"><b>3</b>Connect</button>
+            <button type="button" data-s="4"><b>4</b>Check</button>
+            <button type="button" data-s="5"><b>5</b>Deliver</button>
+            <button type="button" class="arch-play" aria-pressed="false">Play</button>
+          </div>
+          <p class="arch-text" aria-live="polite"><b>The whole system.</b> Open data sets on the left, the AI tools and knowledge base in the middle, what the client receives on the right. Press play, or choose a step.</p>
+        </figcaption>
+      </figure>
+      <ul class="arch-notes">
+        <li><b>Open-source throughout</b><span>Search engine, document readers, language model, graph database: no licence fees and no vendor lock-in.</span></li>
+        <li><b>The data stays on site</b><span>The server holds its own copy of each open data set. Confidential questions never leave it.</span></li>
+        <li><b>Every claim is checked</b><span>A finding stands only if its exact words and numbers are in the source. An expert approves each report.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="evidence">
+    <div class="wrap">
+      <p class="eyebrow">The evidence</p>
+      <h2>The public record, held in full</h2>
+      <p class="sub">Priora keeps its own copy of the official sources and connects them, so a finding can be traced to the exact record behind it.</p>
+      <div class="numbers">
+        <div class="num"><b data-k="t.k510">176,529</b><span>FDA 510(k) clearances</span></div>
+        <div class="num"><b data-k="t.maude">26.6M</b><span>adverse-event reports (MAUDE)</span></div>
+        <div class="num"><b data-k="t.gudid">5.2M</b><span>device identifiers (GUDID)</span></div>
+        <div class="num"><b data-k="t.recalls">59,659</b><span>recalled products</span></div>
+        <div class="num"><b data-k="t.product_codes">7,097</b><span>FDA product codes</span></div>
+        <div class="num"><b data-k="t.cfr">2,553</b><span>sections of 21 CFR, Parts 800 to 898</span></div>
+        <div class="num"><b data-k="t.cpc">254,314</b><span>patent classification codes</span></div>
+        <div class="num"><b>38M</b><span>PubMed citations</span><small>loading now</small></div>
       </div>
     </div>
   </section>
 
   <section class="alt" id="what">
     <div class="wrap">
-      <p class="eyebrow">What you get</p>
-      <h2>Four answers, from one brief</h2>
-      <p class="sub">Describe your device once. Priora searches patents, FDA records and the regulations, then hands your team documents it can use the same week.</p>
+      <p class="eyebrow">What the engine produces</p>
+      <h2>Four kinds of answer</h2>
       <div class="modules">
         <article class="mod">
           <div class="fig"><div class="fig-check">
@@ -85,12 +147,12 @@
             <div class="r"><span class="cat a">A</span><span>Two-wavelength LED drive</span><span class="st exp">Expired</span></div>
           </div></div>
           <div class="txt"><span class="name">Check</span><h3>What is already patented, and where</h3>
-            <p>Each feature of your design is checked against patents and applications worldwide. You see which claims touch it, in which countries, and whether they are active, pending or expired.</p></div>
+            <p>Each feature of a design is checked against patents and applications, with status by country. Patent full text is being added now; the rows above are an illustration.</p></div>
         </article>
         <article class="mod">
           <div class="fig"><div class="chart" id="mini-chart" aria-label="510(k) clearances per year for pulse oximeters"></div></div>
           <div class="txt"><span class="name">Landscape</span><h3>Who is cleared, recalled and reported</h3>
-            <p>Every 510(k), PMA, recall and adverse-event report for your product code: who the makers are, how long FDA takes, what goes wrong in the field.</p></div>
+            <p>Every 510(k), PMA, recall and adverse-event report for a product code: who the makers are, how long FDA takes, what goes wrong in the field.</p></div>
         </article>
         <article class="mod">
           <div class="fig"><div class="tablewrap"><table class="matrix">
@@ -98,8 +160,8 @@
             <tr><td>SpO₂ accuracy</td><td>Optical front end</td><td>Desat study</td><td class="mono">ISO 80601-2-61</td><td><span class="cat x">X</span></td></tr>
             <tr><td>Low-perfusion alarm</td><td>Alarm logic</td><td class="gap">No test</td><td class="mono">IEC 60601-1-8</td><td><span class="cat y">Y</span></td></tr>
           </table></div></div>
-          <div class="txt"><span class="name">Trace</span><h3>A trace matrix that holds up in review</h3>
-            <p>Requirements are checked for clarity and completeness, then traced to design, tests, standards and the patent claims that touch them. Gaps show before an auditor finds them.</p></div>
+          <div class="txt"><span class="name">Trace</span><h3>Requirements traced to evidence</h3>
+            <p>Requirements are checked for clarity and completeness, then traced to design, tests, standards and the patent claims that touch them.</p></div>
         </article>
         <article class="mod">
           <div class="fig"><div class="doc">
@@ -109,96 +171,28 @@
             <div class="ln"><span class="mono">ISO 14971</span><span>Risk file and hazard list</span></div>
             <div class="ln"><span class="mono">IEC 62304</span><span>Software lifecycle evidence</span></div>
           </div></div>
-          <div class="txt"><span class="name">Scribe</span><h3>The documents, drafted</h3>
-            <p>Regulatory roadmaps, internal training manuals and customer help documents, drafted from the same evidence and citing the rule behind every step.</p></div>
+          <div class="txt"><span class="name">Scribe</span><h3>Roadmaps and documents</h3>
+            <p>Regulatory roadmaps, training manuals and help documents, drafted from the same evidence and citing the rule behind every step.</p></div>
         </article>
       </div>
-    </div>
-  </section>
-
-  <section id="evidence">
-    <div class="wrap">
-      <p class="eyebrow">The evidence</p>
-      <h2>Built on the public record, in full</h2>
-      <p class="sub">Priora keeps its own copy of the official sources and connects them, so a finding about your device can be traced back to the exact record behind it.</p>
-      <div class="numbers">
-        <div class="num"><b data-k="t.k510">176,529</b><span>FDA 510(k) clearances</span></div>
-        <div class="num"><b data-k="t.maude">26.6M</b><span>adverse-event reports (MAUDE)</span></div>
-        <div class="num"><b data-k="t.gudid">5.2M</b><span>device identifiers (GUDID)</span></div>
-        <div class="num"><b data-k="t.recalls">59,659</b><span>recalled products</span></div>
-        <div class="num"><b data-k="t.product_codes">7,097</b><span>FDA product codes</span></div>
-        <div class="num"><b data-k="t.cfr">2,553</b><span>sections of 21 CFR, Parts 800 to 898</span></div>
-        <div class="num"><b data-k="t.cpc">254,314</b><span>patent classification codes</span></div>
-        <div class="num soon"><b>US · EP</b><span>full-text patents</span><small>being added now</small></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="alt">
-    <div class="wrap teaser">
-      <div>
-        <p class="eyebrow">From the sample report</p>
-        <h2>FDA reviews of pulse oximeters now take longer</h2>
-        <p class="sub">The median 510(k) review for this device type rose from about four months to about ten between 2020 and 2023. A roadmap that assumes the old pace misses its launch date.</p>
-        <p style="margin-top:24px"><a class="btn primary" href="sample.html">Read the sample report</a></p>
-      </div>
-      <div class="chartbox">
-        <div class="cap">Median days from 510(k) submission to decision, product code DQA</div>
-        <div class="chart" id="days-chart" aria-label="Median review days by year"></div>
-        <div class="src">Source: FDA 510(k) database via openFDA. Years with fewer than 5 decisions are left out.</div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <p class="eyebrow">How an engagement works</p>
-      <h2>From brief to documents in days</h2>
-      <div class="steps">
-        <div class="step"><h3>Brief</h3><p>You describe the device, its features and target markets. Confidential details stay with us.</p></div>
-        <div class="step"><h3>Search</h3><p>Priora runs the patent, FDA and regulation searches and links every finding to its record.</p></div>
-        <div class="step"><h3>Review</h3><p>We walk your team through the flags and the landscape, and agree what to dig into.</p></div>
-        <div class="step"><h3>Deliver</h3><p>You receive the report, trace matrix and roadmap, ready for your patent counsel and regulatory lead.</p></div>
-      </div>
       <div class="guard">
-        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 4.6 3.2 8.4 8 9.5 4.8-1.1 8-4.9 8-9.5V6z"/><path d="M9 12l2 2 4-4"/></svg>
-          <h3>Your invention stays private</h3><p>Confidential design details are processed on private infrastructure and are never sent to public AI services.</p></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>
+          <h3>Local models first</h3><p>The reading and drafting run on models on our own server. Confidential questions never go to a cloud AI.</p></div>
         <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h12l4 4v12H4z"/><path d="M8 12h8M8 16h5M8 8h4"/></svg>
-          <h3>Every finding cites its source</h3><p>Patent numbers, 510(k) numbers and regulation sections sit beside each finding, so anyone can check it.</p></div>
+          <h3>Every finding cites its source</h3><p>FDA record numbers, regulation sections, patent classes and PubMed IDs sit beside each finding.</p></div>
         <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
-          <h3>Flags, not legal opinions</h3><p>Priora shows what to look at and why. Questions of infringement and validity go to your patent attorney.</p></div>
+          <h3>Flags, not legal opinions</h3><p>Priora shows what to look at and why. Questions of infringement and validity belong with a patent attorney.</p></div>
       </div>
     </div>
   </section>
 
-  <section class="alt" id="contact" hidden>
-    <div class="wrap contact">
-      <div>
-        <p class="eyebrow">Get started</p>
-        <h2>Bring us one device</h2>
-        <p class="sub">Start with a single product. We will return a device brief with its patent flags, FDA landscape and a first roadmap.</p>
-        <ul class="checks">
-          <li>One device, one fixed price</li>
-          <li>Findings your patent counsel and regulatory lead can check</li>
-          <li>Your brief and design details stay confidential</li>
-        </ul>
-      </div>
-      <form class="box" id="ask" novalidate>
-        <div><label for="f-name">Your name</label><input id="f-name" name="name" autocomplete="name" required></div>
-        <div><label for="f-email">Work email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
-        <div><label for="f-co">Company</label><input id="f-co" name="company" autocomplete="organization"></div>
-        <div><label for="f-dev">The device, in a sentence</label><textarea id="f-dev" name="device" placeholder="A wrist-worn monitor that measures oxygen saturation and pulse rate during sleep"></textarea></div>
-        <button class="btn primary" type="submit">Request a device brief</button>
-        <p class="formnote" id="ask-note">Please do not include confidential design details here. We will send an NDA first.</p>
-      </form>
-    </div>
-  </section>
+  <section class="alt" id="contact" hidden></section>
 </main>
 
 <footer class="site">
   <div class="wrap">
-    <span>Priora · patent and regulatory intelligence for medical devices</span>
-    <span>FDA data from openFDA, AccessGUDID and eCFR. Patent classification from the CPC scheme. <span data-k="gen">Figures as of 2026-11-02</span>.</span>
+    <span>Priora · a research engine for medical technology</span>
+    <span>FDA data from openFDA, AccessGUDID and eCFR. Patent classification from the CPC scheme. Literature from PubMed. <span data-k="gen">Figures as of 2026-11-02</span>.</span>
   </div>
 </footer>
 
