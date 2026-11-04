@@ -3677,8 +3677,8 @@
      ]
     },
     {
-     "headline": "Hematocrit significantly affects glucose meter accuracy",
-     "detail": "Hematocrit levels influence glucose readings by 11\u201312% at normal hematocrit (45%) and up to 30\u201370% in chronic disease patients. Dynamic electrochemistry and hematocrit correction algorithms improve accuracy across hematocrit ranges.",
+     "headline": "Hematocrit affects glucose meter accuracy",
+     "detail": "Hematocrit affects glucose meter accuracy. Some meters incorporate correction algorithms to improve accuracy across hematocrit ranges. The acceptable hematocrit range for Bayer POCT blood glucose meters is 0.0% to 70.0%.",
      "claims": [
       94,
       95,
@@ -3692,7 +3692,6 @@
       106
      ],
      "figures": [
-      "F51",
       "F89",
       "F105"
      ],
@@ -3715,11 +3714,6 @@
       {
        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2864156/",
        "title": "Regulatory Controversies Surround Blood Glucose Monitoring ...",
-       "tier": "primary"
-      },
-      {
-       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2769957/",
-       "title": "Glucose Meters: A Review of Technical Challenges to Obtaining ...",
        "tier": "primary"
       },
       {
@@ -3746,6 +3740,55 @@
        "tier": "primary"
       }
      ]
+    },
+    {
+     "headline": "Continuous glucose monitors (CGMs) measure interstitial glucose using a subcutaneous sensor and transmitter, with a mean time lag of 5.3\u20136.2 minutes in the overnight fasted state in healthy adults and an average delay of 7\u201315 minutes between interstitial fluid and venous blood",
+     "detail": "CGMs use a subcutaneous sensor and transmitter to measure interstitial glucose, with a mean time lag of 5.3\u20136.2 minutes in the overnight fasted state in healthy adults and an average delay of 7\u201315 minutes between interstitial fluid and venous blood. Accuracy is quantified as MARD, calculated as the average of absolute differences between CGM readings and reference measurements as a percentage of the reference value. MARD values vary by device and time of day, with examples including 10.8% for the G4 Platinum, 12.3% for the FreeStyle Navigator, 17.9% for the Enlite\u00ae sensor, and daily fluctuations of 15.25% to 19.15%. MARD provides some indication of the overall accuracy of a CGM system.",
+     "claims": [
+      47,
+      48,
+      51,
+      53,
+      58
+     ],
+     "figures": [
+      "F36",
+      "F38",
+      "F44",
+      "F43",
+      "F42",
+      "F41",
+      "F39",
+      "F40"
+     ],
+     "refs": [
+      {
+       "url": "https://link.springer.com/article/10.1007/s44337-025-00273-1",
+       "title": "Evolution in blood glucose monitoring: a comprehensive review of ...",
+       "tier": "primary"
+      },
+      {
+       "url": "https://patents.google.com/patent/WO2018181980A1/en",
+       "title": "WO2018181980A1 - Continuous glucose monitoring using an fad ...",
+       "tier": "patent"
+      },
+      {
+       "url": "https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0139973",
+       "title": "Accuracy of Continuous Glucose Monitoring Measurements in ...",
+       "tier": "primary"
+      },
+      {
+       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5375072/",
+       "title": "Significance and Reliability of MARD for the Accuracy of CGM Systems",
+       "tier": "primary"
+      },
+      {
+       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3837059/",
+       "title": "Time Lag of Glucose From Intravascular to Interstitial Compartment ...",
+       "tier": "primary"
+      }
+     ],
+     "question": 4
     }
    ],
    "methods": [
@@ -3793,7 +3836,7 @@
      "method": "Glucose Oxidase",
      "principle": "Oxidation of glucose to H\u2082O\u2082",
      "measures": "Hydrogen peroxide (H\u2082O\u2082)",
-     "performance": "Detection limit 7.0 \u00b5mol/L, linear range 0.01\u201338.6 mmol/L",
+     "performance": "",
      "setting": "Clinical and home use",
      "limitations": "Interference from ascorbic acid, lipemic sera",
      "claims": [
@@ -3803,10 +3846,7 @@
       11,
       12
      ],
-     "figures": [
-      "F8",
-      "F9"
-     ],
+     "figures": [],
      "refs": [
       {
        "url": "https://pdf.benchchem.com/7821/A_Researcher_s_Guide_to_Specificity_in_D_Glucose_Assays_A_Comparative_Analysis_of_Monosaccharide_Cross_Reactivity.pdf",
@@ -3816,11 +3856,6 @@
       {
        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2769957/",
        "title": "Glucose Meters: A Review of Technical Challenges to Obtaining ...",
-       "tier": "primary"
-      },
-      {
-       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11764175/",
-       "title": "Electrochemical Glucose Sensor Based on Dual Redox Mediators",
        "tier": "primary"
       }
      ]
@@ -3902,7 +3937,7 @@
      "method": "Continuous Glucose Monitoring (CGM)",
      "principle": "Interstitial fluid glucose measured via sensor",
      "measures": "Glucose in interstitial fluid",
-     "performance": "Time lag 5.3\u20136.2 min, MARD 12.8%",
+     "performance": "",
      "setting": "Diabetes management",
      "limitations": "",
      "claims": [
@@ -3912,8 +3947,7 @@
       53
      ],
      "figures": [
-      "F36",
-      "F45"
+      "F36"
      ],
      "refs": [
       {
@@ -3935,11 +3969,6 @@
        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5375072/",
        "title": "Significance and Reliability of MARD for the Accuracy of CGM Systems",
        "tier": "primary"
-      },
-      {
-       "url": "https://www.nature.com/articles/s41598-025-95334-x",
-       "title": "Calibration and performance of a Raman-based device for non ... - Nature",
-       "tier": "primary"
       }
      ]
     }
@@ -3960,7 +3989,7 @@
     },
     {
      "id": "F4",
-     "method": "Mut Q\u2010GDH",
+     "method": "mut Q\u2010GDH",
      "quantity": "mean difference",
      "value": "0.72 \u00b1 0.64 mmol/l",
      "unit": "mmol/l",
@@ -3986,7 +4015,7 @@
     },
     {
      "id": "F6",
-     "method": "Mut Q\u2010GDH",
+     "method": "mut Q\u2010GDH",
      "quantity": "mean difference",
      "value": "0.52 mmol/l",
      "unit": "mmol/l",
@@ -4000,7 +4029,7 @@
     {
      "id": "F8",
      "method": "detection limits",
-     "quantity": "7.0 \u00b5mol/L",
+     "quantity": "",
      "value": "7.0 \u00b5mol/L",
      "unit": "\u00b5mol/L",
      "conditions": "limit of detection (LOD)",
@@ -4008,25 +4037,25 @@
      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11764175/",
      "title": "Electrochemical Glucose Sensor Based on Dual Redox Mediators",
      "tier": "primary",
-     "used": true
+     "used": false
     },
     {
      "id": "F9",
-     "method": "ranges",
-     "quantity": "0.01 to 38.6 mmol/L",
+     "method": "",
+     "quantity": "linear glucose response range",
      "value": "0.01 to 38.6 mmol/L",
      "unit": "mmol/L",
-     "conditions": "linear glucose response range",
+     "conditions": "",
      "quote": "linear glucose response range from 0.01 to 38.6 mmol/L",
      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11764175/",
      "title": "Electrochemical Glucose Sensor Based on Dual Redox Mediators",
      "tier": "primary",
-     "used": true
+     "used": false
     },
     {
      "id": "F10",
      "method": "sensitivities",
-     "quantity": "38 \u00b5A\u00b7L/(mmol\u00b7cm2)",
+     "quantity": "",
      "value": "38 \u00b5A\u00b7L/(mmol\u00b7cm2)",
      "unit": "\u00b5A\u00b7L/(mmol\u00b7cm2)",
      "conditions": "sensitivity",
@@ -4039,7 +4068,7 @@
     {
      "id": "F11",
      "method": "accuracy (bias, % within limits)",
-     "quantity": "between 99.5% and 107%",
+     "quantity": "",
      "value": "between 99.5% and 107%",
      "unit": "%",
      "conditions": "glucose recovery rate",
@@ -4051,7 +4080,7 @@
     },
     {
      "id": "F12",
-     "method": "quantitative",
+     "method": "",
      "quantity": "potential step amplitude",
      "value": "0 to 400 mV",
      "unit": "mV",
@@ -4064,7 +4093,7 @@
     },
     {
      "id": "F13",
-     "method": "quantitative",
+     "method": "",
      "quantity": "glucose concentration",
      "value": "200",
      "unit": "mg/dL",
@@ -4077,7 +4106,7 @@
     },
     {
      "id": "F14",
-     "method": "quantitative",
+     "method": "",
      "quantity": "potential step amplitude",
      "value": "150",
      "unit": "mV",
@@ -4091,7 +4120,7 @@
     {
      "id": "F15",
      "method": "lower limit of detection",
-     "quantity": "0.11 mg/dL",
+     "quantity": "",
      "value": "0.11 mg/dL",
      "unit": "mg/dL",
      "conditions": "determined to be",
@@ -4104,7 +4133,7 @@
     {
      "id": "F16",
      "method": "lag time",
-     "quantity": "15 minutes",
+     "quantity": "",
      "value": "15 minutes",
      "unit": "minutes",
      "conditions": "found",
@@ -4117,7 +4146,7 @@
     {
      "id": "F17",
      "method": "accuracy",
-     "quantity": "95%",
+     "quantity": "",
      "value": "95%",
      "unit": "%",
      "conditions": "of the system\u2019s results shall fall within either \u00b115 mg/dL of the average measured values of the reference method at blood glucose (BG) concentrations <100 mg/dL or within \u00b115% for BG concentrations \u2265100 mg/dL",
@@ -4130,7 +4159,7 @@
     {
      "id": "F18",
      "method": "accuracy",
-     "quantity": "99%",
+     "quantity": "",
      "value": "99%",
      "unit": "%",
      "conditions": "of the individual BG results shall fall within zones A and B of the consensus error grid",
@@ -4143,7 +4172,7 @@
     {
      "id": "F19",
      "method": "accuracy",
-     "quantity": "95%",
+     "quantity": "",
      "value": "95%",
      "unit": "%",
      "conditions": "BGMS results within \u00b115 mg/dl at glucose concentrations <100 mg/dl and within \u00b115% at \u2265100 mg/dl",
@@ -4156,7 +4185,7 @@
     {
      "id": "F20",
      "method": "accuracy",
-     "quantity": "99%",
+     "quantity": "",
      "value": "99%",
      "unit": "%",
      "conditions": "results within zones A and B",
@@ -4169,7 +4198,7 @@
     {
      "id": "F21",
      "method": "accuracy",
-     "quantity": "95%",
+     "quantity": "",
      "value": "95%",
      "unit": "%",
      "conditions": "meter readings within \u00b115 mg/dL (for glucose concentrations <100 mg/dL) or \u00b115% (glucose concentrations \u2265100 mg/dL) of the reference glucose concentrations",
@@ -4182,7 +4211,7 @@
     {
      "id": "F22",
      "method": "accuracy",
-     "quantity": "99.5%",
+     "quantity": "",
      "value": "99.5%",
      "unit": "%",
      "conditions": "meter A",
@@ -4195,7 +4224,7 @@
     {
      "id": "F23",
      "method": "accuracy",
-     "quantity": "96.0%",
+     "quantity": "",
      "value": "96.0%",
      "unit": "%",
      "conditions": "meters C and D",
@@ -4260,7 +4289,7 @@
     {
      "id": "F28",
      "method": "accuracy",
-     "quantity": "18.5%",
+     "quantity": "",
      "value": "18.5%",
      "unit": "%",
      "conditions": "ISO 15197:2013 criteria",
@@ -4273,7 +4302,7 @@
     {
      "id": "F29",
      "method": "accuracy",
-     "quantity": "67.25%",
+     "quantity": "",
      "value": "67.25%",
      "unit": "%",
      "conditions": "within zone A and zone B of the consensus error grid",
@@ -4286,7 +4315,7 @@
     {
      "id": "F30",
      "method": "accuracy",
-     "quantity": "29.4%",
+     "quantity": "",
      "value": "29.4%",
      "unit": "%",
      "conditions": "no-risk zone",
@@ -4299,7 +4328,7 @@
     {
      "id": "F31",
      "method": "accuracy",
-     "quantity": "51.8%",
+     "quantity": "",
      "value": "51.8%",
      "unit": "%",
      "conditions": "slight risk zone",
@@ -4312,7 +4341,7 @@
     {
      "id": "F32",
      "method": "accuracy",
-     "quantity": "18.6%",
+     "quantity": "",
      "value": "18.6%",
      "unit": "%",
      "conditions": "moderate risk zone",
@@ -4325,7 +4354,7 @@
     {
      "id": "F33",
      "method": "accuracy",
-     "quantity": "0.2%",
+     "quantity": "",
      "value": "0.2%",
      "unit": "%",
      "conditions": "severe risk zone",
@@ -4337,11 +4366,11 @@
     },
     {
      "id": "F34",
-     "method": "copy",
-     "quantity": "\u00b120 mg/dl",
+     "method": "",
+     "quantity": "for levels <100 mg/dl (5.6 mmol/liter) for at least 95% of results",
      "value": "\u00b120 mg/dl",
      "unit": "mg/dl",
-     "conditions": "for levels <100 mg/dl (5.6 mmol/liter) for at least 95% of results",
+     "conditions": "",
      "quote": "accuracy criteria to \u00b120 mg/dl (1.11 mmol/liter) for levels <100 mg/dl (5.6 mmol/liter) or \u00b120% for glucose levels >100mg/dl (5.6 mmol/liter) for at least 95% of results.",
      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2769957/",
      "title": "Glucose Meters: A Review of Technical Challenges to Obtaining ...",
@@ -4350,11 +4379,11 @@
     },
     {
      "id": "F35",
-     "method": "copy",
-     "quantity": "\u00b120%",
+     "method": "",
+     "quantity": "for glucose levels >100 mg/dl (5.6 mmol/liter) for at least 95% of results",
      "value": "\u00b120%",
      "unit": "%",
-     "conditions": "for glucose levels >100 mg/dl (5.6 mmol/liter) for at least 95% of results",
+     "conditions": "",
      "quote": "accuracy criteria to \u00b120 mg/dl (1.11 mmol/liter) for levels <100 mg/dl (5.6 mmol/liter) or \u00b120% for glucose levels >100mg/dl (5.6 mmol/liter) for at least 95% of results.",
      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2769957/",
      "title": "Glucose Meters: A Review of Technical Challenges to Obtaining ...",
@@ -4364,7 +4393,7 @@
     {
      "id": "F36",
      "method": "time lag",
-     "quantity": "5.3\u20136.2",
+     "quantity": "",
      "value": "5.3\u20136.2 min",
      "unit": "min",
      "conditions": "overnight fasted state in healthy adults",
@@ -4377,7 +4406,7 @@
     {
      "id": "F37",
      "method": "time lag",
-     "quantity": "4\u201350 min",
+     "quantity": "",
      "value": "4\u201350 min",
      "unit": "min",
      "conditions": "temporal relationship between changes in plasma glucose to ISF glucose concentrations in subjects with and without diabetes",
@@ -4390,7 +4419,7 @@
     {
      "id": "F38",
      "method": "physiological delay",
-     "quantity": "5\u20136 min",
+     "quantity": "",
      "value": "5\u20136 min",
      "unit": "min",
      "conditions": "in the overnight fasted state in healthy adults",
@@ -4398,77 +4427,77 @@
      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3837059/",
      "title": "Time Lag of Glucose From Intravascular to Interstitial Compartment ...",
      "tier": "primary",
-     "used": false
+     "used": true
     },
     {
      "id": "F39",
-     "method": "copy",
-     "quantity": "15.25%",
+     "method": "",
+     "quantity": "depending on the time of the day",
      "value": "15.25%",
      "unit": "%",
-     "conditions": "depending on the time of the day",
+     "conditions": "",
      "quote": "a MARD ranging from 15.25%\u201319.15% depending on the time of the day.",
      "url": "https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0139973",
      "title": "Accuracy of Continuous Glucose Monitoring Measurements in ...",
      "tier": "primary",
-     "used": false
+     "used": true
     },
     {
      "id": "F40",
-     "method": "copy",
-     "quantity": "19.15%",
+     "method": "",
+     "quantity": "depending on the time of the day",
      "value": "19.15%",
      "unit": "%",
-     "conditions": "depending on the time of the day",
+     "conditions": "",
      "quote": "a MARD ranging from 15.25%\u201319.15% depending on the time of the day.",
      "url": "https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0139973",
      "title": "Accuracy of Continuous Glucose Monitoring Measurements in ...",
      "tier": "primary",
-     "used": false
+     "used": true
     },
     {
      "id": "F41",
-     "method": "copy",
-     "quantity": "17.9",
+     "method": "",
+     "quantity": "Enlite\u00ae sensor (released 2010)",
      "value": "17.9",
      "unit": "",
-     "conditions": "Enlite\u00ae sensor (released 2010)",
+     "conditions": "",
      "quote": "a comparative study reported a MARD of 17.9 for Enlite\u00ae sensor (released 2010), whereas the FreeStyle Navigator (released 2012 by Abbott Diabetes Care) and G4 Platinum (released 2013 by Dexcom) had MARD values of 12.3 and 10.8 respectively.",
      "url": "https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0139973",
      "title": "Accuracy of Continuous Glucose Monitoring Measurements in ...",
      "tier": "primary",
-     "used": false
+     "used": true
     },
     {
      "id": "F42",
-     "method": "copy",
-     "quantity": "12.3",
+     "method": "",
+     "quantity": "FreeStyle Navigator (released 2012 by Abbott Diabetes Care)",
      "value": "12.3",
      "unit": "",
-     "conditions": "FreeStyle Navigator (released 2012 by Abbott Diabetes Care)",
+     "conditions": "",
      "quote": "a comparative study reported a MARD of 17.9 for Enlite\u00ae sensor (released 2010), whereas the FreeStyle Navigator (released 2012 by Abbott Diabetes Care) and G4 Platinum (released 2013 by Dexcom) had MARD values of 12.3 and 10.8 respectively.",
      "url": "https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0139973",
      "title": "Accuracy of Continuous Glucose Monitoring Measurements in ...",
      "tier": "primary",
-     "used": false
+     "used": true
     },
     {
      "id": "F43",
-     "method": "copy",
-     "quantity": "10.8",
+     "method": "",
+     "quantity": "G4 Platinum (released 2013 by Dexcom)",
      "value": "10.8",
      "unit": "",
-     "conditions": "G4 Platinum (released 2013 by Dexcom)",
+     "conditions": "",
      "quote": "a comparative study reported a MARD of 17.9 for Enlite\u00ae sensor (released 2010), whereas the FreeStyle Navigator (released 2012 by Abbott Diabetes Care) and G4 Platinum (released 2013 by Dexcom) had MARD values of 12.3 and 10.8 respectively.",
      "url": "https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0139973",
      "title": "Accuracy of Continuous Glucose Monitoring Measurements in ...",
      "tier": "primary",
-     "used": false
+     "used": true
     },
     {
      "id": "F44",
      "method": "time delay",
-     "quantity": "7\u201315 minute",
+     "quantity": "",
      "value": "7\u201315 minute",
      "unit": "minute",
      "conditions": "average delay in interchange between interstitial fluid and venous blood",
@@ -4476,12 +4505,12 @@
      "url": "https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0139973",
      "title": "Accuracy of Continuous Glucose Monitoring Measurements in ...",
      "tier": "primary",
-     "used": false
+     "used": true
     },
     {
      "id": "F45",
      "method": "mean absolute relative difference",
-     "quantity": "12.8%",
+     "quantity": "",
      "value": "12.8%",
      "unit": "%",
      "conditions": "for NIGM device compared with capillary blood glucose measurements",
@@ -4489,12 +4518,12 @@
      "url": "https://www.nature.com/articles/s41598-025-95334-x",
      "title": "Calibration and performance of a Raman-based device for non ... - Nature",
      "tier": "primary",
-     "used": true
+     "used": false
     },
     {
      "id": "F46",
      "method": "consensus error grid analysis",
-     "quantity": "100%",
+     "quantity": "",
      "value": "100%",
      "unit": "%",
      "conditions": "of NIGM readings in zones A and B",
@@ -4507,7 +4536,7 @@
     {
      "id": "F47",
      "method": "glucose hexokinase methodology",
-     "quantity": "58 to 322 mg/dL",
+     "quantity": "",
      "value": "58 to 322 mg/dL",
      "unit": "mg/dL",
      "conditions": "glucose reference values",
@@ -4520,7 +4549,7 @@
     {
      "id": "F48",
      "method": "glucose hexokinase methodology",
-     "quantity": "19 to 54%",
+     "quantity": "",
      "value": "19 to 54%",
      "unit": "%",
      "conditions": "hematocrit range tested",
@@ -4533,7 +4562,7 @@
     {
      "id": "F49",
      "method": "glucose hexokinase methodology",
-     "quantity": "\u00b115 mg/dL",
+     "quantity": "",
      "value": "\u00b115 mg/dL",
      "unit": "mg/dL",
      "conditions": "individual glucose results",
@@ -4546,7 +4575,7 @@
     {
      "id": "F50",
      "method": "glucose hexokinase methodology",
-     "quantity": "\u00b120%",
+     "quantity": "",
      "value": "\u00b120%",
      "unit": "%",
      "conditions": "individual glucose results",
@@ -4567,12 +4596,12 @@
      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2769957/",
      "title": "Glucose Meters: A Review of Technical Challenges to Obtaining ...",
      "tier": "primary",
-     "used": true
+     "used": false
     },
     {
      "id": "F52",
      "method": "glucose hexokinase methodology",
-     "quantity": "21 to 547 mg/dL",
+     "quantity": "",
      "value": "21 to 547 mg/dL",
      "unit": "mg/dL",
      "conditions": "glucose reference values",
@@ -4584,8 +4613,8 @@
     },
     {
      "id": "F53",
-     "method": "Roche/Hitachi 917 analyzer",
-     "quantity": "29 to 50%",
+     "method": "roche/Hitachi 917 analyzer",
+     "quantity": "",
      "value": "29 to 50%",
      "unit": "%",
      "conditions": "hematocrit range tested",
@@ -4598,7 +4627,7 @@
     {
      "id": "F54",
      "method": "reference results",
-     "quantity": "\u00b112 mg/dL",
+     "quantity": "",
      "value": "\u00b112 mg/dL",
      "unit": "mg/dL",
      "conditions": "glucose concentrations less than 100 mg/dL",
@@ -4610,7 +4639,7 @@
     },
     {
      "id": "F57",
-     "method": "Bias",
+     "method": "bias",
      "quantity": "SD",
      "value": "5.5",
      "unit": "mg/dL",
@@ -4623,8 +4652,8 @@
     },
     {
      "id": "F60",
-     "method": "Accuracy",
-     "quantity": "99.7%",
+     "method": "accuracy",
+     "quantity": "",
      "value": "99.7%",
      "unit": "%",
      "conditions": "data within bias requirements",
@@ -4688,11 +4717,11 @@
     },
     {
      "id": "F65",
-     "method": "copy",
-     "quantity": "10 mg/dl",
+     "method": "",
+     "quantity": "if the reference reading is less than 75 mg/dl",
      "value": "10 mg/dl",
      "unit": "mg/dl",
-     "conditions": "if the reference reading is less than 75 mg/dl",
+     "conditions": "",
      "quote": "within 10 mg/dl if the reference reading is less than 75 mg/dl",
      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2864156/",
      "title": "Regulatory Controversies Surround Blood Glucose Monitoring ...",
@@ -4701,11 +4730,11 @@
     },
     {
      "id": "F66",
-     "method": "copy",
-     "quantity": "15%",
+     "method": "",
+     "quantity": "when reference readings are above 75 mg/dl",
      "value": "15%",
      "unit": "%",
-     "conditions": "when reference readings are above 75 mg/dl",
+     "conditions": "",
      "quote": "within 15% when reference readings are above 75 mg/dl",
      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2864156/",
      "title": "Regulatory Controversies Surround Blood Glucose Monitoring ...",
@@ -4714,11 +4743,11 @@
     },
     {
      "id": "F67",
-     "method": "copy",
-     "quantity": "75 mg/dl",
+     "method": "",
+     "quantity": "reference readings",
      "value": "75 mg/dl",
      "unit": "mg/dl",
-     "conditions": "reference readings",
+     "conditions": "",
      "quote": "if the reference reading is less than 75 mg/dl",
      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2864156/",
      "title": "Regulatory Controversies Surround Blood Glucose Monitoring ...",
@@ -4727,11 +4756,11 @@
     },
     {
      "id": "F68",
-     "method": "concentrations",
+     "method": "",
      "quantity": "steady\u2010state plasma concentration of icodextrin and its metabolites",
      "value": "achieved within 7\u201310 days",
-     "unit": "none",
-     "conditions": "none",
+     "unit": "",
+     "conditions": "",
      "quote": "According to pharmacokinetics studies, the steady\u2010state plasma concentration of icodextrin and its metabolites was achieved within 7\u201310 days 9.",
      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6807095/",
      "title": "Falsely Elevated Glucose Concentrations in Peritoneal Dialysis ...",
@@ -4740,11 +4769,11 @@
     },
     {
      "id": "F69",
-     "method": "times",
+     "method": "",
      "quantity": "steady\u2010state plasma concentration of icodextrin and its metabolites",
      "value": "7\u201310 days",
      "unit": "days",
-     "conditions": "none",
+     "conditions": "",
      "quote": "According to pharmacokinetics studies, the steady\u2010state plasma concentration of icodextrin and its metabolites was achieved within 7\u201310 days 9.",
      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6807095/",
      "title": "Falsely Elevated Glucose Concentrations in Peritoneal Dialysis ...",
@@ -4756,7 +4785,7 @@
      "method": "accuracy (MARD, bias, % within limits)",
      "quantity": "CCC",
      "value": "0.75",
-     "unit": "none",
+     "unit": "",
      "conditions": "GDH\u2010PQQ vs reference",
      "quote": "The CCCs of two strips against the reference were 0.75 and 0.85 for GDH\u2010PQQ and Mut Q\u2010GDH, respectively.",
      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6807095/",
@@ -4769,7 +4798,7 @@
      "method": "accuracy (MARD, bias, % within limits)",
      "quantity": "CCC",
      "value": "0.85",
-     "unit": "none",
+     "unit": "",
      "conditions": "Mut Q\u2010GDH vs reference",
      "quote": "The CCCs of two strips against the reference were 0.75 and 0.85 for GDH\u2010PQQ and Mut Q\u2010GDH, respectively.",
      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6807095/",
@@ -4779,10 +4808,10 @@
     },
     {
      "id": "F72",
-     "method": "ranges",
+     "method": "",
      "quantity": "hematocrit",
      "value": "38.3% \u00b1 4.2",
-     "unit": "none",
+     "unit": "",
      "conditions": "icodextrin group",
      "quote": "Hematocrit values of icodextrin and control groups were similar (38.3% \u00b1 4.2 and 38.4% \u00b1 3.7, respectively; P > 0.05).",
      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6807095/",
@@ -4792,10 +4821,10 @@
     },
     {
      "id": "F73",
-     "method": "ranges",
+     "method": "",
      "quantity": "hematocrit",
      "value": "38.4% \u00b1 3.7",
-     "unit": "none",
+     "unit": "",
      "conditions": "control group",
      "quote": "Hematocrit values of icodextrin and control groups were similar (38.3% \u00b1 4.2 and 38.4% \u00b1 3.7, respectively; P > 0.05).",
      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6807095/",
@@ -4805,7 +4834,7 @@
     },
     {
      "id": "F74",
-     "method": "concentrations",
+     "method": "",
      "quantity": "glucose",
      "value": "3.9-4.4",
      "unit": "mmol/L",
@@ -4818,10 +4847,10 @@
     },
     {
      "id": "F75",
-     "method": "ranges",
+     "method": "",
      "quantity": "interference",
      "value": "up to 193%",
-     "unit": "none",
+     "unit": "",
      "conditions": "Aviva",
      "quote": "the extent of the interference was up to 193% (Aviva), 179% (FreeStyle), 25.1% (Flexx), and 5.9% (StatStrip).",
      "url": "https://pubmed.ncbi.nlm.nih.gov/19821756/",
@@ -4831,7 +4860,7 @@
     },
     {
      "id": "F76",
-     "method": "concentrations",
+     "method": "",
      "quantity": "glucose",
      "value": "3.41",
      "unit": "mmol/l",
@@ -4844,7 +4873,7 @@
     },
     {
      "id": "F77",
-     "method": "value",
+     "method": "",
      "quantity": "accuracy",
      "value": "\u22645%",
      "unit": "",
@@ -4857,7 +4886,7 @@
     },
     {
      "id": "F78",
-     "method": "value",
+     "method": "",
      "quantity": "accuracy",
      "value": "\u00b112.5%",
      "unit": "%",
@@ -4870,7 +4899,7 @@
     },
     {
      "id": "F79",
-     "method": "value",
+     "method": "",
      "quantity": "accuracy",
      "value": "94.2%",
      "unit": "%",
@@ -4883,7 +4912,7 @@
     },
     {
      "id": "F80",
-     "method": "value",
+     "method": "",
      "quantity": "accuracy",
      "value": "79%",
      "unit": "%",
@@ -4896,11 +4925,11 @@
     },
     {
      "id": "F85",
-     "method": "value",
-     "quantity": "75",
+     "method": "",
+     "quantity": "glucose concentrations greater than 75",
      "value": "75",
      "unit": "mg/dL",
-     "conditions": "glucose concentrations greater than 75",
+     "conditions": "",
      "quote": "glucose concentrations greater than 75 should be less than 5% on average with no individual value greater than 10%.",
      "url": "https://www.fda.gov/media/102002/download",
      "title": "Final Guidance Documents: \u201cSelf-Monitoring Blood Glucose Test ...",
@@ -4909,11 +4938,11 @@
     },
     {
      "id": "F86",
-     "method": "value",
-     "quantity": "5%",
+     "method": "",
+     "quantity": "bias for samples with glucose concentrations greater than 75",
      "value": "5%",
      "unit": "%",
-     "conditions": "bias for samples with glucose concentrations greater than 75",
+     "conditions": "",
      "quote": "bias for sample with glucose concentrations greater than 75 should be less than 5% on average with no individual value greater than 10%.",
      "url": "https://www.fda.gov/media/102002/download",
      "title": "Final Guidance Documents: \u201cSelf-Monitoring Blood Glucose Test ...",
@@ -4922,11 +4951,11 @@
     },
     {
      "id": "F87",
-     "method": "value",
-     "quantity": "10%",
+     "method": "",
+     "quantity": "individual value for samples with glucose concentrations greater than 75",
      "value": "10%",
      "unit": "%",
-     "conditions": "individual value for samples with glucose concentrations greater than 75",
+     "conditions": "",
      "quote": "bias for sample with glucose concentrations greater than 75 should be less than 5% on average with no individual value greater than 10%.",
      "url": "https://www.fda.gov/media/102002/download",
      "title": "Final Guidance Documents: \u201cSelf-Monitoring Blood Glucose Test ...",
@@ -4935,11 +4964,11 @@
     },
     {
      "id": "F88",
-     "method": "copy",
-     "quantity": "15%",
+     "method": "",
+     "quantity": "in healthy subjects",
      "value": "15%",
      "unit": "%",
-     "conditions": "in healthy subjects",
+     "conditions": "",
      "quote": "y of hematocrit of up to 15% in healthy subjects",
      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3208875/",
      "title": "Dynamic Electrochemistry Corrects for Hematocrit Interference on ...",
@@ -4948,11 +4977,11 @@
     },
     {
      "id": "F89",
-     "method": "copy",
-     "quantity": "30\u201370%",
+     "method": "",
+     "quantity": "in patients affected by chronic disease",
      "value": "30\u201370%",
      "unit": "%",
-     "conditions": "in patients affected by chronic disease",
+     "conditions": "",
      "quote": "extreme ranges from 30\u201370%,",
      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3208875/",
      "title": "Dynamic Electrochemistry Corrects for Hematocrit Interference on ...",
@@ -4961,11 +4990,11 @@
     },
     {
      "id": "F90",
-     "method": "copy",
-     "quantity": "11\u201312%",
+     "method": "",
+     "quantity": "glucose concentrations of plasma compared with whole blood at a normal hematocrit of approximately 45%.",
      "value": "11\u201312%",
      "unit": "%",
-     "conditions": "glucose concentrations of plasma compared with whole blood at a normal hematocrit of approximately 45%.",
+     "conditions": "",
      "quote": "a higher water content and therefore has higher glucose concentrations of approximately 11\u201312% compared with whole blood already at a normal hematocrit of approximately 45%.",
      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3208875/",
      "title": "Dynamic Electrochemistry Corrects for Hematocrit Interference on ...",
@@ -4974,11 +5003,11 @@
     },
     {
      "id": "F91",
-     "method": "copy",
-     "quantity": "45%",
+     "method": "",
+     "quantity": "normal hematocrit.",
      "value": "45%",
      "unit": "%",
-     "conditions": "normal hematocrit.",
+     "conditions": "",
      "quote": "already at a normal hematocrit of approximately 45%.",
      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3208875/",
      "title": "Dynamic Electrochemistry Corrects for Hematocrit Interference on ...",
@@ -4988,7 +5017,7 @@
     {
      "id": "F94",
      "method": "accuracy",
-     "quantity": "5.3",
+     "quantity": "",
      "value": "5.3",
      "unit": "%",
      "conditions": "average percentage bias between the meters and reference glucose measurement",
@@ -5001,7 +5030,7 @@
     {
      "id": "F95",
      "method": "accuracy",
-     "quantity": "5.0",
+     "quantity": "",
      "value": "5.0",
      "unit": "%",
      "conditions": "average percentage bias between the meters and reference glucose measurement",
@@ -5014,7 +5043,7 @@
     {
      "id": "F96",
      "method": "accuracy",
-     "quantity": "5.9",
+     "quantity": "",
      "value": "5.9",
      "unit": "%",
      "conditions": "average percentage bias between the meters and reference glucose measurement",
@@ -5027,7 +5056,7 @@
     {
      "id": "F97",
      "method": "accuracy",
-     "quantity": "6.6",
+     "quantity": "",
      "value": "6.6",
      "unit": "%",
      "conditions": "average percentage bias between the meters and reference glucose measurement",
@@ -5039,11 +5068,11 @@
     },
     {
      "id": "F98",
-     "method": "concentrations",
-     "quantity": "33",
+     "method": "",
+     "quantity": "observed glucose range determined on the reference analyzer",
      "value": "33",
      "unit": "mg/dL",
-     "conditions": "observed glucose range determined on the reference analyzer",
+     "conditions": "",
      "quote": "33 to 581 mg/dL and hematocrit was 28 to 50%.",
      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6501526/",
      "title": "Comparative Accuracy Evaluation of a Blood Glucose Meter With Novel ...",
@@ -5052,11 +5081,11 @@
     },
     {
      "id": "F99",
-     "method": "concentrations",
-     "quantity": "581",
+     "method": "",
+     "quantity": "observed glucose range determined on the reference analyzer",
      "value": "581",
      "unit": "mg/dL",
-     "conditions": "observed glucose range determined on the reference analyzer",
+     "conditions": "",
      "quote": "33 to 581 mg/dL and hematocrit was 28 to 50%.",
      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6501526/",
      "title": "Comparative Accuracy Evaluation of a Blood Glucose Meter With Novel ...",
@@ -5065,11 +5094,11 @@
     },
     {
      "id": "F100",
-     "method": "ranges",
-     "quantity": "28",
+     "method": "",
+     "quantity": "hematocrit",
      "value": "28",
      "unit": "%",
-     "conditions": "hematocrit",
+     "conditions": "",
      "quote": "33 to 581 mg/dL and hematocrit was 28 to 50%.",
      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6501526/",
      "title": "Comparative Accuracy Evaluation of a Blood Glucose Meter With Novel ...",
@@ -5078,11 +5107,11 @@
     },
     {
      "id": "F101",
-     "method": "ranges",
-     "quantity": "50",
+     "method": "",
+     "quantity": "hematocrit",
      "value": "50",
      "unit": "%",
-     "conditions": "hematocrit",
+     "conditions": "",
      "quote": "33 to 581 mg/dL and hematocrit was 28 to 50%.",
      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6501526/",
      "title": "Comparative Accuracy Evaluation of a Blood Glucose Meter With Novel ...",
@@ -5091,7 +5120,7 @@
     },
     {
      "id": "F102",
-     "method": "value",
+     "method": "",
      "quantity": "HCT",
      "value": "0.10 L/L",
      "unit": "L/L",
@@ -5104,7 +5133,7 @@
     },
     {
      "id": "F103",
-     "method": "value",
+     "method": "",
      "quantity": "accuracy",
      "value": "3.4%",
      "unit": "%",
@@ -5117,7 +5146,7 @@
     },
     {
      "id": "F104",
-     "method": "value",
+     "method": "",
      "quantity": "HCT",
      "value": "35.0% \u2212 55.0%",
      "unit": "%",
@@ -5130,7 +5159,7 @@
     },
     {
      "id": "F105",
-     "method": "value",
+     "method": "",
      "quantity": "HCT",
      "value": "0.0% \u2212 70.0%",
      "unit": "%",
@@ -5143,7 +5172,7 @@
     },
     {
      "id": "F106",
-     "method": "value",
+     "method": "",
      "quantity": "HCT",
      "value": "20% and 70%",
      "unit": "%",

@@ -2958,8 +2958,8 @@
      ]
     },
     {
-     "headline": "Hyperspectral Imaging Detects Blood on Fabrics with 589 nm Refractive Index Correlations",
-     "detail": "Hyperspectral imaging detects blood on fabrics using visible wavelength reflectance, with 589 nm absorption related to refractive indices of hemoglobin. The method is effective for detecting latent blood stains on black fabrics. Refractive index measurements at 589 nm (1.383) are associated with hemoglobin concentrations (320 g L\u22121).",
+     "headline": "Hyperspectral Imaging Detects Blood on Fabrics",
+     "detail": "Hyperspectral imaging detects blood on fabrics using visible wavelength reflectance. The method is effective for detecting latent blood stains on black fabrics. The application of visible wavelength reflectance hyperspectral imaging is used for the detection and identification of blood stains. Visible hyperspectral imaging can be valuable for the detection of latent blood stains on black fabrics. Hyperspectral imaging is a promising technique for the detection of blood traces.",
      "claims": [
       102,
       103,
@@ -2968,11 +2968,7 @@
       107,
       113
      ],
-     "figures": [
-      "F94",
-      "F105",
-      "F107"
-     ],
+     "figures": [],
      "refs": [
       {
        "url": "https://link.springer.com/article/10.1007/s00521-025-11825-y",
@@ -2988,23 +2984,69 @@
        "url": "https://www.imechyperspectral.com/en/applications/medical-hyperspectral-imaging",
        "title": "Medical hyperspectral imaging for surgery and diagnostics | imec",
        "tier": "industry"
-      },
-      {
-       "url": "https://www.frontiersin.org/journals/photonics/articles/10.3389/fphot.2025.1636398/full",
-       "title": "Absorption, scattering, and refractive index of blood and its ...",
-       "tier": "primary"
-      },
-      {
-       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5503668/",
-       "title": "Techniques used for the screening of hemoglobin levels in blood ...",
-       "tier": "primary"
-      },
-      {
-       "url": "https://www.bluestar-forensic.com/wp-content/uploads/2021/03/Evaluation-of-Six-Presumptive-Tests-for-Blood-Their-Specificity-Sensitivity-and-Effect-on-High-Molecular-Weight-DNA.pdf",
-       "title": "PDF Evaluation of Six Presumptive Tests for Blood, Their Specificity ...",
-       "tier": "industry"
       }
      ]
+    },
+    {
+     "headline": "Chemical Oxygen Demand (COD) concentrations in samples taken at different times were determined to be between 5120\u20136140 mg/L",
+     "detail": "",
+     "claims": [
+      60,
+      65
+     ],
+     "figures": [
+      "F102"
+     ],
+     "refs": [
+      {
+       "url": "https://link.springer.com/article/10.1007/s13762-026-07114-3",
+       "title": "Investigation of slaughterhouse wastewater treatment by ...",
+       "tier": "primary"
+      }
+     ],
+     "question": 6
+    },
+    {
+     "headline": "Immunochromatographic tests for human hemoglobin demonstrate higher specificity and sensitivity compared to chemical presumptive blood tests, with the latter being more prone to false positives due to cross-reactivity with non-blood substances",
+     "detail": "Immunochromatographic tests use antibodies specific to human hemoglobin, enabling precise detection even in complex samples. Chemical presumptive tests, such as the Kastle-Meyer test, can react to peroxidase-like activity in plant materials, leading to false positives. Immunochromatographic tests are noted for high sensitivity and are preferred in forensic settings for reliable detection. Chemical tests, while simple and low-cost, lack the specificity of immunochromatographic methods and are not used for definitive identification.",
+     "claims": [
+      78,
+      80,
+      81,
+      82,
+      79,
+      88,
+      91
+     ],
+     "figures": [],
+     "refs": [
+      {
+       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8991121/",
+       "title": "A fluorescent microsphere-based immunochromatographic strip is ...",
+       "tier": "primary"
+      },
+      {
+       "url": "https://abacusdiagnostics.com/Illuminating_Latent_Blood.pdf",
+       "title": "Illuminating Latent Blood - Abacus Diagnostics",
+       "tier": "industry"
+      },
+      {
+       "url": "https://pdf.benchchem.com/1208/A_Comparative_Analysis_of_Presumptive_Blood_Tests_Sensitivity_and_Specificity.pdf",
+       "title": "PDF A Comparative Analysis of Presumptive Blood Tests: Sensitivity and ...",
+       "tier": "industry"
+      },
+      {
+       "url": "https://pubmed.ncbi.nlm.nih.gov/17337303/",
+       "title": "Comparison of a new gold-immunochromatographic assay for the ...",
+       "tier": "primary"
+      },
+      {
+       "url": "https://link.springer.com/article/10.1007/s00414-017-1719-y",
+       "title": "Forensic differentiation between peripheral and menstrual blood in ...",
+       "tier": "primary"
+      }
+     ],
+     "question": 7
     }
    ],
    "methods": [
@@ -3241,7 +3283,7 @@
     {
      "id": "F1",
      "method": "absorption spectrum",
-     "quantity": "415 nm",
+     "quantity": "",
      "value": "415 nm",
      "unit": "nm",
      "conditions": "maximum absorption",
@@ -3254,7 +3296,7 @@
     {
      "id": "F2",
      "method": "absorption spectrum",
-     "quantity": "320 nm",
+     "quantity": "",
      "value": "320 nm",
      "unit": "nm",
      "conditions": "detection range",
@@ -3267,7 +3309,7 @@
     {
      "id": "F3",
      "method": "absorption spectrum",
-     "quantity": "450 nm",
+     "quantity": "",
      "value": "450 nm",
      "unit": "nm",
      "conditions": "detection range",
@@ -3280,7 +3322,7 @@
     {
      "id": "F4",
      "method": "absorption spectrum",
-     "quantity": "540 nm",
+     "quantity": "",
      "value": "540 nm",
      "unit": "nm",
      "conditions": "detection range",
@@ -3293,7 +3335,7 @@
     {
      "id": "F5",
      "method": "absorption spectrum",
-     "quantity": "589 nm",
+     "quantity": "",
      "value": "589 nm",
      "unit": "nm",
      "conditions": "detection range",
@@ -3306,7 +3348,7 @@
     {
      "id": "F6",
      "method": "absorption spectroscopy",
-     "quantity": "0.11 \u00b1 0.03 mm\u22121",
+     "quantity": "",
      "value": "0.11 \u00b1 0.03 mm\u22121",
      "unit": "mm\u22121",
      "conditions": "completely hemolyzed blood",
@@ -3319,7 +3361,7 @@
     {
      "id": "F7",
      "method": "absorption spectroscopy",
-     "quantity": "0.20 \u00b1 0.05 mm\u22121",
+     "quantity": "",
      "value": "0.20 \u00b1 0.05 mm\u22121",
      "unit": "mm\u22121",
      "conditions": "intact blood",
@@ -3332,7 +3374,7 @@
     {
      "id": "F8",
      "method": "absorption spectroscopy",
-     "quantity": "400\u20132,500 nm",
+     "quantity": "",
      "value": "400\u20132,500 nm",
      "unit": "nm",
      "conditions": "range for measuring absorption coefficients of water and solutions of oxy- and deoxyhemoglobin in water",
@@ -3345,7 +3387,7 @@
     {
      "id": "F9",
      "method": "absorption spectroscopy",
-     "quantity": "1,350\u20132,500 nm",
+     "quantity": "",
      "value": "1,350\u20132,500 nm",
      "unit": "nm",
      "conditions": "range where absorption of hemoglobin solutions closely follows the spectral dependence of water",
@@ -3358,7 +3400,7 @@
     {
      "id": "F10",
      "method": "absorption spectroscopy",
-     "quantity": "535, 555, 576 nm",
+     "quantity": "",
      "value": "535, 555, 576 nm",
      "unit": "nm",
      "conditions": "position of Q-band peaks",
@@ -3371,7 +3413,7 @@
     {
      "id": "F11",
      "method": "absorption spectroscopy",
-     "quantity": "400\u2013450 nm",
+     "quantity": "",
      "value": "400\u2013450 nm",
      "unit": "nm",
      "conditions": "position of Soret band peak",
@@ -3384,7 +3426,7 @@
     {
      "id": "F12",
      "method": "absorption spectroscopy",
-     "quantity": "414 nm to 408 nm",
+     "quantity": "",
      "value": "414 nm to 408 nm",
      "unit": "nm",
      "conditions": "blue shift in visible absorption spectrum of the Hb Soret band",
@@ -3397,7 +3439,7 @@
     {
      "id": "F13",
      "method": "spectrophotometric",
-     "quantity": "406 nm",
+     "quantity": "",
      "value": "406 nm",
      "unit": "nm",
      "conditions": "used in custom method for hemoglobin measurements on NanoDrop One/OneC instrument",
@@ -3410,7 +3452,7 @@
     {
      "id": "F14",
      "method": "spectrophotometric",
-     "quantity": "414 nm",
+     "quantity": "",
      "value": "414 nm",
      "unit": "nm",
      "conditions": "used in custom method for hemoglobin measurements on NanoDrop One/OneC instrument",
@@ -3423,7 +3465,7 @@
     {
      "id": "F15",
      "method": "spectrophotometric",
-     "quantity": "431 nm",
+     "quantity": "",
      "value": "431 nm",
      "unit": "nm",
      "conditions": "used in custom method for hemoglobin measurements on NanoDrop One/OneC instrument",
@@ -3436,7 +3478,7 @@
     {
      "id": "F16",
      "method": "spectrophotometric",
-     "quantity": "541 nm",
+     "quantity": "",
      "value": "541 nm",
      "unit": "nm",
      "conditions": "used in custom method for hemoglobin measurements on NanoDrop One/OneC instrument",
@@ -3449,7 +3491,7 @@
     {
      "id": "F17",
      "method": "spectrophotometric",
-     "quantity": "576 nm",
+     "quantity": "",
      "value": "576 nm",
      "unit": "nm",
      "conditions": "used in custom method for hemoglobin measurements on NanoDrop One/OneC instrument",
@@ -3462,7 +3504,7 @@
     {
      "id": "F18",
      "method": "colorimetric",
-     "quantity": "540 nm",
+     "quantity": "",
      "value": "540 nm",
      "unit": "nm",
      "conditions": "used for quantitating hemoglobin in whole blood with Drabkin\u2019s reagent",
@@ -3475,7 +3517,7 @@
     {
      "id": "F19",
      "method": "detection limit",
-     "quantity": "1:5,000,000",
+     "quantity": "",
      "value": "1:5,000,000",
      "unit": "dilution",
      "conditions": "as described by Grodsky et al (74)",
@@ -3488,7 +3530,7 @@
     {
      "id": "F20",
      "method": "spectral scanning",
-     "quantity": "250\u2013260 and 400\u2013410 nm",
+     "quantity": "",
      "value": "between 250\u2013260 and 400\u2013410 nm",
      "unit": "nm",
      "conditions": "absorbance value graph, coefficient unit of the absorbance unit, tabulation range less than 10, standard Hb dissolved in physiological NaCl",
@@ -3501,7 +3543,7 @@
     {
      "id": "F21",
      "method": "spectral scanning",
-     "quantity": "200\u2013900 nm",
+     "quantity": "",
      "value": "200\u2013900 nm",
      "unit": "nm",
      "conditions": "absorbance measurement of the blood control, measurement mechanism same as first stage of Hb",
@@ -3514,7 +3556,7 @@
     {
      "id": "F22",
      "method": "SOCT",
-     "quantity": "800 nm",
+     "quantity": "",
      "value": "800 nm",
      "unit": "nm",
      "conditions": "Detection for those studies was centered about the isobestic point around 800 nm",
@@ -3527,7 +3569,7 @@
     {
      "id": "F23",
      "method": "SOCT",
-     "quantity": "L = 2 mm",
+     "quantity": "",
      "value": "L = 2 mm",
      "unit": "mm",
      "conditions": "on depths would need to be greater than L = 2 mm",
@@ -3540,7 +3582,7 @@
     {
      "id": "F24",
      "method": "detection limits",
-     "quantity": "9.2%",
+     "quantity": "",
      "value": "9.2%",
      "unit": "%",
      "conditions": "retrieval error",
@@ -3553,7 +3595,7 @@
     {
      "id": "F25",
      "method": "test strips",
-     "quantity": "2.5\u2013250 nM",
+     "quantity": "",
      "value": "2.5\u2013250 nM",
      "unit": "nM",
      "conditions": "hemoglobin detection",
@@ -3566,7 +3608,7 @@
     {
      "id": "F26",
      "method": "test strips",
-     "quantity": "2.5 \u03bcM",
+     "quantity": "",
      "value": "2.5 \u03bcM",
      "unit": "\u03bcM",
      "conditions": "hemoglobin",
@@ -3579,7 +3621,7 @@
     {
      "id": "F27",
      "method": "test strips",
-     "quantity": "0.25 \u03bcM",
+     "quantity": "",
      "value": "0.25 \u03bcM",
      "unit": "\u03bcM",
      "conditions": "hemoglobin",
@@ -3592,7 +3634,7 @@
     {
      "id": "F28",
      "method": "test strips",
-     "quantity": "1.0 \u03bcM",
+     "quantity": "",
      "value": "1.0 \u03bcM",
      "unit": "\u03bcM",
      "conditions": "heme",
@@ -3605,7 +3647,7 @@
     {
      "id": "F29",
      "method": "test strips",
-     "quantity": "250 nM",
+     "quantity": "",
      "value": "250 nM",
      "unit": "nM",
      "conditions": "hemoglobin upper quantification limit",
@@ -3618,7 +3660,7 @@
     {
      "id": "F30",
      "method": "apoHRP-based assay",
-     "quantity": "23.8\u201341.7 nM",
+     "quantity": "",
      "value": "23.8\u201341.7 nM",
      "unit": "nM",
      "conditions": "heme quantification range with o-dianisidine",
@@ -3631,7 +3673,7 @@
     {
      "id": "F31",
      "method": "apoHRP-based assay",
-     "quantity": "33.3\u201342.9 nM",
+     "quantity": "",
      "value": "33.3\u201342.9 nM",
      "unit": "nM",
      "conditions": "heme quantification range with TMB",
@@ -3644,7 +3686,7 @@
     {
      "id": "F32",
      "method": "apoHRP-based assay",
-     "quantity": "100.65 \u00b1 3.26 %",
+     "quantity": "",
      "value": "100.65 \u00b1 3.26 %",
      "unit": "%",
      "conditions": "MRR with TMB",
@@ -3657,7 +3699,7 @@
     {
      "id": "F33",
      "method": "apoHRP-based assay",
-     "quantity": "84.20 \u00b1 11.00 %",
+     "quantity": "",
      "value": "84.20 \u00b1 11.00 %",
      "unit": "%",
      "conditions": "MRR with o-dianisidine",
@@ -3670,7 +3712,7 @@
     {
      "id": "F34",
      "method": "detection limits",
-     "quantity": "0.35 ml / min",
+     "quantity": "",
      "value": "0.35 ml / min",
      "unit": "ml / min",
      "conditions": "at a hematocrit level of 32 % at a dialysis fluid flow rate of 800 ml / min according to the medical safety standard IEC 60601-2-16:2018",
@@ -3683,7 +3725,7 @@
     {
      "id": "F35",
      "method": "detection limits",
-     "quantity": "0.35 ml / min",
+     "quantity": "",
      "value": "0.35 ml / min",
      "unit": "ml / min",
      "conditions": "at a hematocrit level of 32 % at a dialysis fluid flow rate of 800 ml / min",
@@ -3696,7 +3738,7 @@
     {
      "id": "F36",
      "method": "wavelengths",
-     "quantity": "500\u2013700 nm",
+     "quantity": "",
      "value": "500\u2013700 nm",
      "unit": "nm",
      "conditions": "visible spectrum",
@@ -3709,7 +3751,7 @@
     {
      "id": "F37",
      "method": "wavelengths",
-     "quantity": "500 nm",
+     "quantity": "",
      "value": "500 nm",
      "unit": "nm",
      "conditions": "green light",
@@ -3722,7 +3764,7 @@
     {
      "id": "F38",
      "method": "wavelengths",
-     "quantity": "700 nm",
+     "quantity": "",
      "value": "700 nm",
      "unit": "nm",
      "conditions": "red light",
@@ -3735,7 +3777,7 @@
     {
      "id": "F39",
      "method": "detection limits",
-     "quantity": "reaction time of <2.5 min",
+     "quantity": "",
      "value": "<2.5 min",
      "unit": "min",
      "conditions": "at a blood flow rate of >200 ml/min",
@@ -3748,7 +3790,7 @@
     {
      "id": "F40",
      "method": "detection limits",
-     "quantity": "1:5,000,000",
+     "quantity": "",
      "value": "1:5,000,000",
      "unit": "",
      "conditions": "detection of blood",
@@ -3761,7 +3803,7 @@
     {
      "id": "F41",
      "method": "detection limits",
-     "quantity": "1:100",
+     "quantity": "",
      "value": "1:100",
      "unit": "dilution",
      "conditions": "porous surfaces with both luminol and fluorescein",
@@ -3774,7 +3816,7 @@
     {
      "id": "F42",
      "method": "detection limits",
-     "quantity": "1:300,000",
+     "quantity": "",
      "value": "1:300,000",
      "unit": "dilution",
      "conditions": "cotton contaminated with bloodstains",
@@ -3786,7 +3828,7 @@
     },
     {
      "id": "F43",
-     "method": "Bluestar",
+     "method": "bluestar",
      "quantity": "sensitivities",
      "value": "1:1,000",
      "unit": "dilution",
@@ -3799,8 +3841,8 @@
     },
     {
      "id": "F44",
-     "method": "Bluestar",
-     "quantity": "concentrations",
+     "method": "bluestar",
+     "quantity": "",
      "value": "1:10,000",
      "unit": "dilution",
      "conditions": "reacted instantly",
@@ -3812,8 +3854,8 @@
     },
     {
      "id": "F45",
-     "method": "Bluestar",
-     "quantity": "concentrations",
+     "method": "bluestar",
+     "quantity": "",
      "value": "1:100,000",
      "unit": "dilution",
      "conditions": "slight reactivity",
@@ -3825,10 +3867,10 @@
     },
     {
      "id": "F46",
-     "method": "Bluestar",
-     "quantity": "times",
+     "method": "bluestar",
+     "quantity": "",
      "value": "4 min",
-     "unit": "time",
+     "unit": "",
      "conditions": "timed experimentation",
      "quote": "There was no reaction with dilutions of 1:1,000,000, 1:5,000,000, or 1:10,000,000 within the 4 min of timed experimentation",
      "url": "https://www.bluestar-forensic.com/wp-content/uploads/2021/03/Evaluation-of-Six-Presumptive-Tests-for-Blood-Their-Specificity-Sensitivity-and-Effect-on-High-Molecular-Weight-DNA.pdf",
@@ -3839,7 +3881,7 @@
     {
      "id": "F47",
      "method": "detection limits",
-     "quantity": "1:800,000",
+     "quantity": "",
      "value": "1:800,000",
      "unit": "",
      "conditions": "luminol and Bluestar produced reactions with dilutions of liquid blood",
@@ -3852,7 +3894,7 @@
     {
      "id": "F48",
      "method": "detection limits",
-     "quantity": "1:80,000",
+     "quantity": "",
      "value": "1:80,000",
      "unit": "",
      "conditions": "Hemascein limit for detection for this study",
@@ -3865,7 +3907,7 @@
     {
      "id": "F49",
      "method": "sensitivities",
-     "quantity": "RFUs above 100",
+     "quantity": "",
      "value": "RFUs above 100",
      "unit": "",
      "conditions": "luminol and Bluestar produced reactions with dilutions of liquid blood up to 1:800,000",
@@ -3878,7 +3920,7 @@
     {
      "id": "F50",
      "method": "sensitivities",
-     "quantity": "over 20,000 RFUs",
+     "quantity": "",
      "value": "over 20,000 RFUs",
      "unit": "",
      "conditions": "1:4,000 diluted bloodstain",
@@ -3891,7 +3933,7 @@
     {
      "id": "F51",
      "method": "sensitivities",
-     "quantity": "11, 635 RFUs",
+     "quantity": "",
      "value": "11, 635 RFUs",
      "unit": "",
      "conditions": "Hemascein",
@@ -3904,7 +3946,7 @@
     {
      "id": "F52",
      "method": "detection limits",
-     "quantity": "1:10",
+     "quantity": "",
      "value": "1:10",
      "unit": "dilution",
      "conditions": "complete dilution series",
@@ -3917,7 +3959,7 @@
     {
      "id": "F53",
      "method": "detection limits",
-     "quantity": "1:1,000,000",
+     "quantity": "",
      "value": "1:1,000,000",
      "unit": "dilution",
      "conditions": "complete dilution series",
@@ -3930,7 +3972,7 @@
     {
      "id": "F54",
      "method": "detection limits",
-     "quantity": "1:10,000",
+     "quantity": "",
      "value": "1:10,000",
      "unit": "dilution",
      "conditions": "complete dilution series",
@@ -3969,7 +4011,7 @@
     {
      "id": "F57",
      "method": "detection limits",
-     "quantity": "1:1000",
+     "quantity": "",
      "value": "1:1000",
      "unit": "",
      "conditions": "blood dilution",
@@ -3982,7 +4024,7 @@
     {
      "id": "F58",
      "method": "detection limits",
-     "quantity": "1:100,000,000",
+     "quantity": "",
      "value": "1:100,000,000",
      "unit": "blood dilution",
      "conditions": "if hydrochloric acid (HCl) was sprayed first to decompose haemoglobin to haemin",
@@ -3995,7 +4037,7 @@
     {
      "id": "F59",
      "method": "detection limits",
-     "quantity": "1:5,000,000",
+     "quantity": "",
      "value": "1:5,000,000",
      "unit": "blood dilution",
      "conditions": "",
@@ -4008,7 +4050,7 @@
     {
      "id": "F60",
      "method": "detection limits",
-     "quantity": "1:10,000",
+     "quantity": "",
      "value": "1:10,000",
      "unit": "blood dilution",
      "conditions": "always down to 1:10,000",
@@ -4021,7 +4063,7 @@
     {
      "id": "F61",
      "method": "detection limits",
-     "quantity": "1:100",
+     "quantity": "",
      "value": "1:100",
      "unit": "dilution",
      "conditions": "concentrations of 1:100 or less, no interactions were detected.",
@@ -4034,7 +4076,7 @@
     {
      "id": "F62",
      "method": "detection limits",
-     "quantity": "1:1,000",
+     "quantity": "",
      "value": "1:1,000",
      "unit": "dilution",
      "conditions": "interactions were seen at blood dilutions of 1:1,000 or greater.",
@@ -4047,7 +4089,7 @@
     {
      "id": "F63",
      "method": "detection limits",
-     "quantity": "1:100,000",
+     "quantity": "",
      "value": "1:100,000",
      "unit": "dilution",
      "conditions": "Bluestar\u00ae was the only presumptive test that can detect blood dilutions of 1:100,000 on some substrates",
@@ -4073,7 +4115,7 @@
     {
      "id": "F65",
      "method": "detection limit",
-     "quantity": "50 mg/dL",
+     "quantity": "",
      "value": "at concentrations above 50 mg/dL of urine.",
      "unit": "mg/dL",
      "conditions": "urine",
@@ -4086,7 +4128,7 @@
     {
      "id": "F66",
      "method": "sensitivity",
-     "quantity": "91 to 98 percent",
+     "quantity": "",
      "value": "sensitivity of about 91 to 98 percent",
      "unit": "percent",
      "conditions": "Hemastix strips",
@@ -4099,7 +4141,7 @@
     {
      "id": "F67",
      "method": "specificity",
-     "quantity": "70 to 85 percent",
+     "quantity": "",
      "value": "specificity is lower, around 70 to 85 percent",
      "unit": "percent",
      "conditions": "Hemastix strips",
@@ -4112,7 +4154,7 @@
     {
      "id": "F68",
      "method": "detection limit",
-     "quantity": "10 erythrocytes",
+     "quantity": "",
      "value": "10 erythrocytes",
      "unit": "erythrocytes",
      "conditions": "in urine",
@@ -4125,7 +4167,7 @@
     {
      "id": "F69",
      "method": "detection limit",
-     "quantity": "1:100,000 to 1:1,000,000 dilution factor",
+     "quantity": "",
      "value": "1:100,000 to 1:1,000,000 dilution factor",
      "unit": "dilution factor",
      "conditions": "equivalent to 10 erythrocytes",
@@ -4138,7 +4180,7 @@
     {
      "id": "F70",
      "method": "interference",
-     "quantity": "1:1,000,000, 1:5,000,000, and 1:10,000,000 dilutions",
+     "quantity": "",
      "value": "1:1,000,000, 1:5,000,000, and 1:10,000,000 dilutions",
      "unit": "dilution factor",
      "conditions": "no reaction",
@@ -4150,11 +4192,11 @@
     },
     {
      "id": "F71",
-     "method": "time",
-     "quantity": "60 sec",
+     "method": "",
+     "quantity": "recommended reading time",
      "value": "60 sec",
      "unit": "seconds",
-     "conditions": "recommended reading time",
+     "conditions": "",
      "quote": "strips should be read at 60 sec",
      "url": "https://www.bluestar-forensic.com/wp-content/uploads/2021/03/Evaluation-of-Six-Presumptive-Tests-for-Blood-Their-Specificity-Sensitivity-and-Effect-on-High-Molecular-Weight-DNA.pdf",
      "title": "PDF Evaluation of Six Presumptive Tests for Blood, Their Specificity ...",
@@ -4163,11 +4205,11 @@
     },
     {
      "id": "F72",
-     "method": "time",
-     "quantity": "3 and 4 min",
+     "method": "",
+     "quantity": "time to observe reaction",
      "value": "3 and 4 min",
      "unit": "minutes",
-     "conditions": "time to observe reaction",
+     "conditions": "",
      "quote": "a reaction was not observed on the strips until between 3 and 4 min after initial app",
      "url": "https://www.bluestar-forensic.com/wp-content/uploads/2021/03/Evaluation-of-Six-Presumptive-Tests-for-Blood-Their-Specificity-Sensitivity-and-Effect-on-High-Molecular-Weight-DNA.pdf",
      "title": "PDF Evaluation of Six Presumptive Tests for Blood, Their Specificity ...",
@@ -4177,7 +4219,7 @@
     {
      "id": "F73",
      "method": "spectral interference",
-     "quantity": "415 nm",
+     "quantity": "",
      "value": "415 nm",
      "unit": "nm",
      "conditions": "Soret band",
@@ -4190,7 +4232,7 @@
     {
      "id": "F74",
      "method": "detection limit",
-     "quantity": "30 min",
+     "quantity": "",
      "value": "30 min",
      "unit": "min",
      "conditions": "TMB reaction proceeded for 30 min",
@@ -4203,7 +4245,7 @@
     {
      "id": "F75",
      "method": "wavelengths",
-     "quantity": "450 nm",
+     "quantity": "",
      "value": "450 nm",
      "unit": "nm",
      "conditions": "resulting absorbance was measured at 450 nm",
@@ -4216,7 +4258,7 @@
     {
      "id": "F76",
      "method": "wavelengths",
-     "quantity": "620 nm",
+     "quantity": "",
      "value": "620 nm",
      "unit": "nm",
      "conditions": "reference wavelength of 620 nm",
@@ -4229,7 +4271,7 @@
     {
      "id": "F77",
      "method": "detection limit",
-     "quantity": "2.5 \u03bcM",
+     "quantity": "",
      "value": "M-2.5 \u03bcM",
      "unit": "\u03bcM",
      "conditions": "hemoglobin",
@@ -4242,7 +4284,7 @@
     {
      "id": "F78",
      "method": "detection limit",
-     "quantity": "10 \u03bcM",
+     "quantity": "",
      "value": "10 \u03bcM",
      "unit": "\u03bcM",
      "conditions": "heme",
@@ -4294,7 +4336,7 @@
     {
      "id": "F82",
      "method": "detection limits",
-     "quantity": "7\u201317 g/dL",
+     "quantity": "",
      "value": "7\u201317 g/dL",
      "unit": "g/dL",
      "conditions": "blood control with a hemoglobin concentration",
@@ -4307,7 +4349,7 @@
     {
      "id": "F83",
      "method": "extinction coefficient",
-     "quantity": "524,280 M-1 cm-1",
+     "quantity": "",
      "value": "524,280 M-1 cm-1",
      "unit": "M-1 cm-1",
      "conditions": "for oxyhemoglobin",
@@ -4320,7 +4362,7 @@
     {
      "id": "F84",
      "method": "extinction coefficient",
-     "quantity": "552,160 M-1 cm-1",
+     "quantity": "",
      "value": "552,160 M-1 cm-1",
      "unit": "M-1 cm-1",
      "conditions": "for deoxyhemoglobin",
@@ -4333,7 +4375,7 @@
     {
      "id": "F85",
      "method": "molecular weight",
-     "quantity": "64.5 kDa",
+     "quantity": "",
      "value": "64.5 kDa",
      "unit": "kDa",
      "conditions": "for oxyhemoglobin",
@@ -4345,11 +4387,11 @@
     },
     {
      "id": "F86",
-     "method": "concentrations",
-     "quantity": "concentrations",
+     "method": "",
+     "quantity": "hemoglobin solution",
      "value": "0, 4.6, 10.4, 16.5, and 28.7",
      "unit": "g/dL",
-     "conditions": "hemoglobin solution",
+     "conditions": "",
      "quote": "measured several concentrations, including 0, 4.6, 10.4, 16.5, and 28.7 g/dL",
      "url": "https://www.frontiersin.org/journals/photonics/articles/10.3389/fphot.2025.1636398/full",
      "title": "Absorption, scattering, and refractive index of blood and its ...",
@@ -4359,7 +4401,7 @@
     {
      "id": "F87",
      "method": "wavelength",
-     "quantity": "400 nm",
+     "quantity": "",
      "value": "400 nm",
      "unit": "nm",
      "conditions": "A400",
@@ -4371,7 +4413,7 @@
     },
     {
      "id": "F89",
-     "method": "Zhernovaya et al. (2011)",
+     "method": "zhernovaya et al. (2011)",
      "quantity": "hemoglobin concentration",
      "value": "up to 140 g/L",
      "unit": "g/L",
@@ -4385,7 +4427,7 @@
     {
      "id": "F90",
      "method": "detection limits",
-     "quantity": "412 nm",
+     "quantity": "",
      "value": "412 nm",
      "unit": "nm",
      "conditions": "peak of the Soret band in fresh blood stains",
@@ -4397,11 +4439,11 @@
     },
     {
      "id": "F91",
-     "method": "concentrations",
-     "quantity": "280 g L\u22121",
+     "method": "",
+     "quantity": "for methemoglobin in water",
      "value": "280 g L\u22121",
      "unit": "g L\u22121",
-     "conditions": "for methemoglobin in water",
+     "conditions": "",
      "quote": "tions of methemoglobin in water with hemoglobin concentrations up to 280 g L\u22121.",
      "url": "https://www.frontiersin.org/journals/photonics/articles/10.3389/fphot.2025.1636398/full",
      "title": "Absorption, scattering, and refractive index of blood and its ...",
@@ -4410,11 +4452,11 @@
     },
     {
      "id": "F92",
-     "method": "concentrations",
-     "quantity": "336 g/L",
+     "method": "",
+     "quantity": "for hemoglobin solution",
      "value": "336 g/L",
      "unit": "g/L",
-     "conditions": "for hemoglobin solution",
+     "conditions": "",
      "quote": "excellent agreement between the data measured from an intact RBC and the expected results on hemoglobin solution at 336 g/L.",
      "url": "https://www.frontiersin.org/journals/photonics/articles/10.3389/fphot.2025.1636398/full",
      "title": "Absorption, scattering, and refractive index of blood and its ...",
@@ -4423,11 +4465,11 @@
     },
     {
      "id": "F93",
-     "method": "concentrations",
-     "quantity": "320 g L\u22121",
+     "method": "",
+     "quantity": "for refractive indices at 589 nm",
      "value": "320 g L\u22121",
      "unit": "g L\u22121",
-     "conditions": "for refractive indices at 589 nm",
+     "conditions": "",
      "quote": "estimated refractive indices at 320 g L\u22121to be 1.383 for both forms of hemoglobin at 589 nm.",
      "url": "https://www.frontiersin.org/journals/photonics/articles/10.3389/fphot.2025.1636398/full",
      "title": "Absorption, scattering, and refractive index of blood and its ...",
@@ -4437,7 +4479,7 @@
     {
      "id": "F94",
      "method": "wavelengths",
-     "quantity": "589 nm",
+     "quantity": "",
      "value": "589 nm",
      "unit": "nm",
      "conditions": "for refractive indices",
@@ -4450,7 +4492,7 @@
     {
      "id": "F95",
      "method": "wavelengths",
-     "quantity": "240\u2013450 nm",
+     "quantity": "",
      "value": "240\u2013450 nm",
      "unit": "nm",
      "conditions": "for optical properties of RBCs",
@@ -4463,7 +4505,7 @@
     {
      "id": "F96",
      "method": "wavelengths",
-     "quantity": "290 nm",
+     "quantity": "",
      "value": "290 nm",
      "unit": "nm",
      "conditions": "for refractive index measurements",
@@ -4476,7 +4518,7 @@
     {
      "id": "F97",
      "method": "wavelengths",
-     "quantity": "1,100 nm",
+     "quantity": "",
      "value": "1,100 nm",
      "unit": "nm",
      "conditions": "for refractive index measurements",
@@ -4489,7 +4531,7 @@
     {
      "id": "F98",
      "method": "accuracy",
-     "quantity": "\u03b1 \u2248 0.22 mLg\u22121",
+     "quantity": "",
      "value": "\u03b1 \u2248 0.22 mLg\u22121",
      "unit": "mLg\u22121",
      "conditions": "for RI increment",
@@ -4502,7 +4544,7 @@
     {
      "id": "F99",
      "method": "refractive indices",
-     "quantity": "1.383",
+     "quantity": "",
      "value": "1.383",
      "unit": "",
      "conditions": "at 320 g L\u22121 and 589 nm",
@@ -4515,7 +4557,7 @@
     {
      "id": "F100",
      "method": "detection limits",
-     "quantity": "0.5 g\u00b7L\u22121",
+     "quantity": "",
      "value": "0.5 g\u00b7L\u22121",
      "unit": "g\u00b7L\u22121",
      "conditions": "NaCl concentration",
@@ -4528,7 +4570,7 @@
     {
      "id": "F101",
      "method": "current density",
-     "quantity": "0.639 mA\u00b7cm\u22122",
+     "quantity": "",
      "value": "0.639 mA\u00b7cm\u22122",
      "unit": "mA\u00b7cm\u22122",
      "conditions": "current density",
@@ -4540,7 +4582,7 @@
     },
     {
      "id": "F102",
-     "method": "concentrations",
+     "method": "",
      "quantity": "COD",
      "value": "5120\u20136140",
      "unit": "mg/L",
@@ -4549,12 +4591,12 @@
      "url": "https://link.springer.com/article/10.1007/s13762-026-07114-3",
      "title": "Investigation of slaughterhouse wastewater treatment by ...",
      "tier": "primary",
-     "used": false
+     "used": true
     },
     {
      "id": "F105",
      "method": "false deferral rate",
-     "quantity": "4.48%",
+     "quantity": "",
      "value": "4.48%",
      "unit": "%",
      "conditions": "prospective blood donors using CompoLab Hb",
@@ -4567,7 +4609,7 @@
     {
      "id": "F106",
      "method": "hemoglobin cutoff level",
-     "quantity": "12.5",
+     "quantity": "",
      "value": "12.5",
      "unit": "g/dL",
      "conditions": "HemoCue 201+",
@@ -4580,7 +4622,7 @@
     {
      "id": "F107",
      "method": "luminol",
-     "quantity": "1:200",
+     "quantity": "",
      "value": "1:200",
      "unit": "dilution ratio",
      "conditions": "sensitivity",
@@ -4593,7 +4635,7 @@
     {
      "id": "F108",
      "method": "luminol",
-     "quantity": "1:100,000,000",
+     "quantity": "",
      "value": "1:100,000,000",
      "unit": "dilution ratio",
      "conditions": "sensitivity",
@@ -4606,7 +4648,7 @@
     {
      "id": "F109",
      "method": "leuchomalachite green (LMG)",
-     "quantity": "1:100,000",
+     "quantity": "",
      "value": "1:100,000",
      "unit": "dilution ratio",
      "conditions": "sensitivity",
@@ -4619,7 +4661,7 @@
     {
      "id": "F110",
      "method": "phenolphthalein",
-     "quantity": "1:2,000",
+     "quantity": "",
      "value": "1:2,000",
      "unit": "dilution ratio",
      "conditions": "sensitivity",
@@ -4632,7 +4674,7 @@
     {
      "id": "F111",
      "method": "phenolphthalein",
-     "quantity": "1:10,000,000",
+     "quantity": "",
      "value": "1:10,000,000",
      "unit": "dilution ratio",
      "conditions": "sensitivity",
@@ -4645,7 +4687,7 @@
     {
      "id": "F112",
      "method": "sensitivity",
-     "quantity": "5 mg/L",
+     "quantity": "",
      "value": "5 mg/L",
      "unit": "mg/L",
      "conditions": "",
@@ -4696,8 +4738,8 @@
     },
     {
      "id": "F117",
-     "method": "Hemoglobin Assay Kit",
-     "quantity": "Hb concentrations",
+     "method": "hemoglobin Assay Kit",
+     "quantity": "hb concentrations",
      "value": "2, 4, 6, 8, 10, 12, 14, 16, 18",
      "unit": "g/dL",
      "conditions": "Hb standard solutions and blood controls",
@@ -4710,7 +4752,7 @@
     {
      "id": "F118",
      "method": "detection limits",
-     "quantity": "1:200",
+     "quantity": "",
      "value": "1:200",
      "unit": "",
      "conditions": "luminol",
@@ -4723,7 +4765,7 @@
     {
      "id": "F119",
      "method": "detection limit",
-     "quantity": "240 nl",
+     "quantity": "",
      "value": "240 nl",
      "unit": "nl",
      "conditions": "menstrual fluid",
@@ -4736,7 +4778,7 @@
     {
      "id": "F120",
      "method": "cut-off",
-     "quantity": "400 ng/ml",
+     "quantity": "",
      "value": "400 ng/ml",
      "unit": "ng/ml",
      "conditions": "test",
@@ -4749,7 +4791,7 @@
     {
      "id": "F121",
      "method": "incubation time",
-     "quantity": "90 min",
+     "quantity": "",
      "value": "90 min",
      "unit": "min",
      "conditions": "test",
@@ -4765,7 +4807,7 @@
      "quantity": "sensitivity",
      "value": "57%",
      "unit": "%",
-     "conditions": "none",
+     "conditions": "",
      "quote": "They found this approach to be 95% accurate with a sensitivity of 57% and a specificity of 29%.",
      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5503668/",
      "title": "Techniques used for the screening of hemoglobin levels in blood ...",
@@ -4778,7 +4820,7 @@
      "quantity": "specificity",
      "value": "29%",
      "unit": "%",
-     "conditions": "none",
+     "conditions": "",
      "quote": "They found this approach to be 95% accurate with a sensitivity of 57% and a specificity of 29%.",
      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5503668/",
      "title": "Techniques used for the screening of hemoglobin levels in blood ...",
@@ -4791,7 +4833,7 @@
      "quantity": "accuracy",
      "value": "95%",
      "unit": "%",
-     "conditions": "none",
+     "conditions": "",
      "quote": "They found this approach to be 95% accurate with a sensitivity of 57% and a specificity of 29%.",
      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5503668/",
      "title": "Techniques used for the screening of hemoglobin levels in blood ...",
@@ -4800,11 +4842,11 @@
     },
     {
      "id": "F125",
-     "method": "Sensitivity",
-     "quantity": "56%",
+     "method": "sensitivity",
+     "quantity": "",
      "value": "56%",
      "unit": "%",
-     "conditions": "Sensitivity 56% and specificity 93.5% | \u2013 | HemoCue 201+ showed greater discriminating power for detecting anemia in prospective blood donors than the micro-hct method |",
+     "conditions": "Sensitivity 56% and specificity 93.5%",
      "quote": "Sensitivity 56% and specificity 93.5% | \u2013 | HemoCue 201+ showed greater discriminating power for detecting anemia in prospective blood donors than the micro-hct method |",
      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5503668/",
      "title": "Techniques used for the screening of hemoglobin levels in blood ...",
@@ -4813,11 +4855,11 @@
     },
     {
      "id": "F126",
-     "method": "Specificity",
-     "quantity": "93.5%",
+     "method": "specificity",
+     "quantity": "",
      "value": "93.5%",
      "unit": "%",
-     "conditions": "Sensitivity 56% and specificity 93.5% | \u2013 | HemoCue 201+ showed greater discriminating power for detecting anemia in prospective blood donors than the micro-hct method |",
+     "conditions": "Sensitivity 56% and specificity 93.5%",
      "quote": "Sensitivity 56% and specificity 93.5% | \u2013 | HemoCue 201+ showed greater discriminating power for detecting anemia in prospective blood donors than the micro-hct method |",
      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5503668/",
      "title": "Techniques used for the screening of hemoglobin levels in blood ...",
@@ -4826,11 +4868,11 @@
     },
     {
      "id": "F127",
-     "method": "Sensitivity",
-     "quantity": "99%",
+     "method": "sensitivity",
+     "quantity": "",
      "value": "99%",
      "unit": "%",
-     "conditions": "Sensitivity 99%, specificity 45%, PPV 43% and NPV 99% | \u2013 | Concordance correlation coefficient between HemoCue and the reference method (0.74) |",
+     "conditions": "Sensitivity 99%, specificity 45%, PPV 43% and NPV 99%",
      "quote": "Sensitivity 99%, specificity 45%, PPV 43% and NPV 99% | \u2013 | Concordance correlation coefficient between HemoCue and the reference method (0.74) |",
      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5503668/",
      "title": "Techniques used for the screening of hemoglobin levels in blood ...",
@@ -4839,11 +4881,11 @@
     },
     {
      "id": "F128",
-     "method": "Specificity",
-     "quantity": "45%",
+     "method": "specificity",
+     "quantity": "",
      "value": "45%",
      "unit": "%",
-     "conditions": "Sensitivity 99%, specificity 45%, PPV 43% and NPV 99% | \u2013 | Concordance correlation coefficient between HemoCue and the reference method (0.74) |",
+     "conditions": "Sensitivity 99%, specificity 45%, PPV 43% and NPV 99%",
      "quote": "Sensitivity 99%, specificity 45%, PPV 43% and NPV 99% | \u2013 | Concordance correlation coefficient between HemoCue and the reference method (0.74) |",
      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5503668/",
      "title": "Techniques used for the screening of hemoglobin levels in blood ...",
@@ -4852,11 +4894,11 @@
     },
     {
      "id": "F129",
-     "method": "Positive Predictive Value",
-     "quantity": "43%",
+     "method": "positive Predictive Value",
+     "quantity": "",
      "value": "43%",
      "unit": "%",
-     "conditions": "Sensitivity 99%, specificity 45%, PPV 43% and NPV 99% | \u2013 | Concordance correlation coefficient between HemoCue and the reference method (0.74) |",
+     "conditions": "Sensitivity 99%, specificity 45%, PPV 43% and NPV 99%",
      "quote": "Sensitivity 99%, specificity 45%, PPV 43% and NPV 99% | \u2013 | Concordance correlation coefficient between HemoCue and the reference method (0.74) |",
      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5503668/",
      "title": "Techniques used for the screening of hemoglobin levels in blood ...",
@@ -4865,11 +4907,11 @@
     },
     {
      "id": "F130",
-     "method": "Concordance correlation coefficient",
-     "quantity": "0.74",
+     "method": "concordance correlation coefficient",
+     "quantity": "",
      "value": "0.74",
      "unit": "",
-     "conditions": "Sensitivity 99%, specificity 45%, PPV 43% and NPV 99% | \u2013 | Concordance correlation coefficient between HemoCue and the reference method (0.74) |",
+     "conditions": "Sensitivity 99%, specificity 45%, PPV 43% and NPV 99%",
      "quote": "Sensitivity 99%, specificity 45%, PPV 43% and NPV 99% | \u2013 | Concordance correlation coefficient between HemoCue and the reference method (0.74) |",
      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5503668/",
      "title": "Techniques used for the screening of hemoglobin levels in blood ...",
@@ -4879,10 +4921,10 @@
     {
      "id": "F131",
      "method": "ICC",
-     "quantity": "0.78",
+     "quantity": "",
      "value": "0.78",
      "unit": "",
-     "conditions": "82% ICC 0.78 |  | CV 2.28\u00b10.73% | HemoCue showed the best agreement with venous Hb determination |",
+     "conditions": "82% ICC 0.78",
      "quote": "82% ICC 0.78 |  | CV 2.28\u00b10.73% | HemoCue showed the best agreement with venous Hb determination |",
      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5503668/",
      "title": "Techniques used for the screening of hemoglobin levels in blood ...",
@@ -4892,10 +4934,10 @@
     {
      "id": "F132",
      "method": "CV",
-     "quantity": "2.28\u00b10.73%",
+     "quantity": "",
      "value": "2.28\u00b10.73%",
      "unit": "%",
-     "conditions": "82% ICC 0.78 |  | CV 2.28\u00b10.73% | HemoCue showed the best agreement with venous Hb determination |",
+     "conditions": "82% ICC 0.78",
      "quote": "82% ICC 0.78 |  | CV 2.28\u00b10.73% | HemoCue showed the best agreement with venous Hb determination |",
      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5503668/",
      "title": "Techniques used for the screening of hemoglobin levels in blood ...",
@@ -4905,7 +4947,7 @@
     {
      "id": "F137",
      "method": "sensitivity",
-     "quantity": "41.3%",
+     "quantity": "",
      "value": "41.3%",
      "unit": "%",
      "conditions": "for females",
@@ -4918,7 +4960,7 @@
     {
      "id": "F138",
      "method": "sensitivity",
-     "quantity": "18.6%",
+     "quantity": "",
      "value": "18.6%",
      "unit": "%",
      "conditions": "for males",
@@ -4931,7 +4973,7 @@
     {
      "id": "F139",
      "method": "sensitivity",
-     "quantity": "97.4%",
+     "quantity": "",
      "value": "97.4%",
      "unit": "%",
      "conditions": "for detecting donors with venous Hb levels <110 g/L",
@@ -4944,7 +4986,7 @@
     {
      "id": "F140",
      "method": "detection limit (LOD)",
-     "quantity": "2 nM",
+     "quantity": "",
      "value": "2 nM",
      "unit": "nM",
      "conditions": "in water and biological fluids",
@@ -4957,7 +4999,7 @@
     {
      "id": "F141",
      "method": "recovery",
-     "quantity": "94.4\u2013108.4%",
+     "quantity": "",
      "value": "94.4\u2013108.4%",
      "unit": "%",
      "conditions": "tap water sample and mouse serum spiked with TC",
@@ -4970,7 +5012,7 @@
     {
      "id": "F142",
      "method": "RSD",
-     "quantity": "less than 5.36%",
+     "quantity": "",
      "value": "less than 5.36%",
      "unit": "%",
      "conditions": "tap water sample and mouse serum spiked with TC",
@@ -4983,7 +5025,7 @@
     {
      "id": "F143",
      "method": "wavelengths",
-     "quantity": "620 nm and 470 nm",
+     "quantity": "",
      "value": "620 nm and 470 nm",
      "unit": "nm",
      "conditions": "fluorescence intensity ratio",
@@ -5021,7 +5063,7 @@
     },
     {
      "id": "F146",
-     "method": "Raman spectroscopy",
+     "method": "raman spectroscopy",
      "quantity": "methane concentration",
      "value": "less than 1.14 mmol/L",
      "unit": "mmol/L",
@@ -6919,10 +6961,10 @@
      "title": "[ON THE LUMINESCENCE OF LUMINOL. XIV. EFFECT OF HALOGENIDS ON LUMINOL CHEMOLUMINESCENCE]."
     },
     {
-     "pmid": 42531974,
+     "pmid": 42379035,
      "year": 2027,
      "journal": "Talanta",
-     "title": "Ag@SiO2@mSiO2-luminol nanoluminophores enable synergistic LSPR-nanoconfinement electrochemiluminescence amplification for ultrasensitive label-free Hg(II) detection."
+     "title": "An ECL immunosensor based on the synergistic self-enhancement of CuCoFe-LDH with Luminol-PEI for ultrasensitive detection of AFP."
     }
    ]
   },

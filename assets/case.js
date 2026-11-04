@@ -128,9 +128,9 @@ function report(D) {
   }
 
   if ($('figures-table')) {
-    const F = [...((R && R.figures) || [])].sort((a, b) => (b.used - a.used) || a.method.localeCompare(b.method));
+    const F = [...((R && R.figures) || [])].sort((a, b) => (b.used - a.used) || (a.method || a.quantity).localeCompare(b.method || b.quantity));
     const fig = f => `<li${f.used ? ' class="used"' : ''}><div class="val"><b>${esc(f.value)}</b> ${f.unit && !f.value.toLowerCase().includes(f.unit.toLowerCase()) ? esc(f.unit) : ''}</div><div>
-        <p class="what"><b>${esc(f.method)}</b> · ${esc(f.quantity)}</p>${f.conditions ? `<p class="cond">${esc(f.conditions)}</p>` : ''}
+        <p class="what">${[f.method && `<b>${esc(f.method)}</b>`, f.quantity && esc(f.quantity)].filter(Boolean).join(' · ')}</p>${f.conditions ? `<p class="cond">${esc(f.conditions)}</p>` : ''}
         <q>${esc(f.quote)}</q><div class="srcs">${refLink(f)}</div></div></li>`;
     if (!F.length) $('figures-table').innerHTML = '<p class="formnote">No figures extracted yet.</p>';
     else {
